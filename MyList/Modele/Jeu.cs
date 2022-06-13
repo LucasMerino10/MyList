@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace MyList.Modele
 {
-    class Jeu
+    class Jeu : Media
     {
+        public Jeu(string utilisateur, string titre, int anneeSortie, int note, string commentaire, DateTime dateAjout, string plateforme)
+            : base(utilisateur, titre, anneeSortie, note, commentaire, dateAjout, plateforme)
+        {
+        }
     }
 }

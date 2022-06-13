@@ -18,6 +18,10 @@ namespace MyList.Connexion
         /// objet de connexion à la BDD à partir d'une chaîne de connexion
         /// </summary>
         private MongoClient client;
+        /// <summary>
+        /// string connect
+        /// </summary>
+        string stringconnect = "mongodb + srv://user_mylist:bJMABBnaEP5ULnnZ@cluster0.lk3yn.mongodb.net/?retryWrites=true&w=majority";
 
         private IMongoDatabase db;
 
