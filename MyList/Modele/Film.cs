@@ -1,32 +1,143 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MongoDB.Bson;
+using System;
 
 namespace MyList.Modele
 {
-    class Film : Media
+    public class Film : IComparable
     {
+        // propriétés
+        public ObjectId Id { get; set; }
         /// <summary>
-        /// Casting du film
+        /// Désigne l'utilisateur qui crée l'entrée media
         /// </summary>
-        private string casting;
+        public string utilisateur { get; set; }
+        /// <summary>
+        /// Titre du media
+        /// </summary>
+        public string titre { get; set; }
+        /// <summary>
+        /// Durée du film en minute
+        /// </summary>
+        public int duree { get; set; }
+        /// <summary>
+        /// Annee de sortie du media
+        /// </summary>
+        public int sortie { get; set; }
+        /// <summary>
+        /// Précise les acteurs principaux
+        /// </summary>
+        public string casting { get; set; }
+        /// <summary>
+        /// Note attribué au media par l'utilisateur
+        /// </summary>
+        public int note { get; set; }
+        /// <summary>
+        /// Commentaire perso de l'utilisateur
+        /// </summary>
+        public string commentaire { get; set; }
+        /// <summary>
+        /// Plateforme sur laquelle le média à été visionnée/utilisé
+        /// </summary>
+        public string plateforme { get; set; }
+        public string img { get; set; }
+        public DateTime dateAjout { get; set; }
 
-        /// <summary>
-        /// Constructeur
-        /// </summary>
-        /// <param name="casting"></param>
-        /// <param name="utilisateur"></param>
-        /// <param name="titre"></param>
-        /// <param name="anneeSortie"></param>
-        /// <param name="note"></param>
-        /// <param name="commentaire"></param>
-        /// <param name="dateAjout"></param>
-        public Film(string casting, string utilisateur, string titre, int anneeSortie, int note, string commentaire, DateTime dateAjout, string plateforme) 
-            : base(utilisateur, titre, anneeSortie, note, commentaire, dateAjout, plateforme)
+        public string realisateur { get; set; }
+
+        public string genre { get; set; }
+
+
+        public Film(string utilisateur, string titre, int duree, int sortie, string casting, int note, string commentaire, string plateforme, string img, DateTime dateAjout, string realisateur, string genre)
         {
+            this.utilisateur = utilisateur;
+            this.titre = titre;
+            this.duree = duree;
+            this.sortie = sortie;
             this.casting = casting;
+            this.note = note;
+            this.commentaire = commentaire;
+            this.plateforme = plateforme;
+            this.img = img;
+            this.dateAjout = dateAjout;
+            this.realisateur = realisateur;
+            this.genre = genre;
+        }
+
+        public int CompareTo(object obj)
+        {
+            return this.dateAjout.CompareTo(((Serie)obj).dateAjout);
+        }
+
+        public string GetCasting()
+        {
+            if (this.casting != "")
+            {
+                return "Casting : " + this.casting;
+            }
+            else
+            {
+                return "";
+            }
+        }
+
+        public string GetSortie()
+        {
+            return "Année de sortie : " + this.sortie;
+        }
+
+        public string GetCommentaire()
+        {
+            if (this.commentaire != "")
+            {
+                return "Commentaire : " + this.commentaire;
+            }
+            else
+            {
+                return "";
+            }
+        }
+
+        public string GetDateAjout()
+        {
+            this.dateAjout = this.dateAjout.ToLocalTime();
+            string jour = this.dateAjout.Day.ToString();
+            string mois = this.dateAjout.Month.ToString();
+            if (this.dateAjout.Day < 10)
+            {
+                jour = "0" + this.dateAjout.Day;
+            }
+            if (this.dateAjout.Month < 10)
+            {
+                mois = "0" + this.dateAjout.Month;
+            }
+            return "Ajouté le " + jour + "/" + mois + "/" + this.dateAjout.Year;
+        }
+
+        public string GetUtilisateur()
+        {
+            return "Ajouté par " + this.utilisateur;
+        }
+
+        public string GetDuree()
+        {
+            return "Durée : " + this.duree / 60 + "h " + this.duree % 60 + "min";
+        }
+
+        public string GetGenre()
+        {
+            if (this.genre != "")
+            {
+                return "Genre(s) : " + this.genre;
+            }
+            else
+            {
+                return "";
+            }
+        }
+
+        public string GetRealisateur()
+        {
+            return "Réalisateur : " + this.realisateur;
         }
     }
 }

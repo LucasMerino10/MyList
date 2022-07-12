@@ -63,9 +63,9 @@ namespace MyList.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap add {
+        internal static System.Drawing.Bitmap _001_favorite {
             get {
-                object obj = ResourceManager.GetObject("add", resourceCulture);
+                object obj = ResourceManager.GetObject("001-favorite", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace MyList.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap add_circle {
+        internal static System.Drawing.Bitmap _002_favorite_1 {
             get {
-                object obj = ResourceManager.GetObject("add_circle", resourceCulture);
+                object obj = ResourceManager.GetObject("002-favorite-1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -96,6 +96,16 @@ namespace MyList.Properties {
         internal static System.Drawing.Bitmap icons8_cinema_60 {
             get {
                 object obj = ResourceManager.GetObject("icons8-cinema-60", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_close_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-close-50", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,26 +146,6 @@ namespace MyList.Properties {
         internal static System.Drawing.Bitmap icons8_tv_show_60 {
             get {
                 object obj = ResourceManager.GetObject("icons8-tv-show-60", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap MyListLogo {
-            get {
-                object obj = ResourceManager.GetObject("MyListLogo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap MyListLogo1 {
-            get {
-                object obj = ResourceManager.GetObject("MyListLogo1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

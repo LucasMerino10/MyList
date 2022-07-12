@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MyList.Vue
 {
     public static class ThemeColor
     {
         public static Color PrimaryColor { get; set; }
-        public static Color SecondaryColor { get; set; } 
+        public static Color SecondaryColor { get; set; }
 
-        public static List<string> ColorList = new List<string>() { "#3F51B5",
+        private static List<string> ColorList = new List<string>() { "#3F51B5",
                                                                     "#009688",
                                                                     "#FF5722",
                                                                     "#607D8B",
@@ -40,6 +36,11 @@ namespace MyList.Vue
                                                                     "#7BCFE9",
                                                                     "#B71C46"};
 
+        public static List<string> GetColorList()
+        {
+            return ColorList;
+        }
+
         public static Color ChangeColorBrightness(Color couleur, double correctionFactor)
         {
             double red = couleur.R;
@@ -47,7 +48,7 @@ namespace MyList.Vue
             double blue = couleur.B;
 
             // si le facteur est inférieur à 0 assombrissement de la couleur
-            if(correctionFactor < 0)
+            if (correctionFactor < 0)
             {
                 correctionFactor = 1 + correctionFactor;
                 red *= correctionFactor;
