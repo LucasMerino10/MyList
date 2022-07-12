@@ -434,11 +434,11 @@ namespace MyList.Vue
         {
             if (dgvJeux.RowCount > 1)
             {
-                lblResultat.Text = dgvJeux.RowCount.ToString() + " jeux enrigistrés";
+                lblResultat.Text = dgvJeux.RowCount.ToString() + " jeux enregistrés";
             }
             else
             {
-                lblResultat.Text = dgvJeux.RowCount.ToString() + " jeu enrigistré";
+                lblResultat.Text = dgvJeux.RowCount.ToString() + " jeu enregistré";
             }
         }
     }

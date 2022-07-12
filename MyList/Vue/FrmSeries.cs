@@ -408,11 +408,11 @@ namespace MyList.Vue
         {
             if (dgvSeries.RowCount > 1)
             {
-                lblResultat.Text = dgvSeries.RowCount.ToString() + " séries enrigistrées";
+                lblResultat.Text = dgvSeries.RowCount.ToString() + " séries enregistrées";
             }
             else
             {
-                lblResultat.Text = dgvSeries.RowCount.ToString() + " série enrigistrée";
+                lblResultat.Text = dgvSeries.RowCount.ToString() + " série enregistrée";
             }
         }
 

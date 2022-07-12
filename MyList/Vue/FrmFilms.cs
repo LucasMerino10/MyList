@@ -428,11 +428,11 @@ namespace MyList.Vue
         {
             if (dgvFilms.RowCount > 1)
             {
-                lblResultat.Text = dgvFilms.RowCount.ToString() + " films enrigistrés";
+                lblResultat.Text = dgvFilms.RowCount.ToString() + " films enregistrés";
             }
             else
             {
-                lblResultat.Text = dgvFilms.RowCount.ToString() + " film enrigistré";
+                lblResultat.Text = dgvFilms.RowCount.ToString() + " film enregistré";
             }
         }
     }
