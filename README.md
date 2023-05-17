@@ -1,6 +1,6 @@
 <h1>Projet personnel</h1> 
 
-![Screenshot](https://i.postimg.cc/3rPhMbLK/demonstration-screenshot.png)
+![Screenshot](https://i.postimg.cc/q7hshqTV/demonstration-screenshot.png)
 
 Il s'agit d'une petite application développée en C# dont le but est de garder en mémoire chaque média consommé en créant une fiche personalisée. 
 
