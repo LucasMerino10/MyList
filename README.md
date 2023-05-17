@@ -1,5 +1,7 @@
 <h1>Projet personnel</h1> 
 
+![Screenshot](https://i.postimg.cc/3rPhMbLK/demonstration-screenshot.png)
+
 Il s'agit d'une petite application développée en C# dont le but est de garder en mémoire chaque média consommé en créant une fiche personalisée. 
 
 Cette fiche est composée des informations générales du film/série/jeu video, d'une note attribuée par l'utilisateur et d'une image.
