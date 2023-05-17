@@ -1,4 +1,4 @@
-MyList est mon premier projet personnel. 
+<h1>Projet personnel</h1> 
 
 Il s'agit d'une petite application développée en C# dont le but est de garder en mémoire chaque média consommé en créant une fiche personalisée. 
 
