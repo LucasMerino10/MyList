@@ -13,7 +13,7 @@ namespace MyList.Vue
         private int tempIndex;
         private Form activeForm;
         private Controle controle;
-        string backgroundImage = "background.jpg";
+        string backgroundImage = "background.jpg";       
 
         public FrmList(Controle controle)
         {
@@ -22,6 +22,7 @@ namespace MyList.Vue
             imgBackground.ImageLocation = controle.GetImageDirectory() + backgroundImage;
             random = new Random();
             btnClose.Visible = false;
+            controle.CopyImagesToLocalDirectory();
         }
 
         /// <summary>
@@ -93,19 +94,26 @@ namespace MyList.Vue
             btnClose.Visible = true;
         }
 
+
         private void btnFilms_Click(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
             OpenChildForm(new FrmFilms(controle, this), sender);
+            this.Cursor = Cursors.Default;
         }
 
         private void btnSeries_Click(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
             OpenChildForm(new FrmSeries(controle, this), sender);
+            this.Cursor = Cursors.Default;
         }
 
         private void btnJeux_Click(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
             OpenChildForm(new FrmJeux(controle, this), sender);
+            this.Cursor = Cursors.Default;
         }
 
         public void btnClose_Click(object sender, EventArgs e)

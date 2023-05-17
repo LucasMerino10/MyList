@@ -30,57 +30,59 @@ namespace MyList.Vue
         private void InitializeComponent()
         {
             this.grpFiche = new System.Windows.Forms.GroupBox();
+            this.lblImdb = new System.Windows.Forms.LinkLabel();
             this.lblCasting = new System.Windows.Forms.Label();
             this.lblGenre = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTitre = new System.Windows.Forms.Label();
+            this.lblPlateforme = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.lblCommentaire = new System.Windows.Forms.Label();
+            this.lblSaison = new System.Windows.Forms.Label();
+            this.lblSortie = new System.Windows.Forms.Label();
+            this.lblNote = new System.Windows.Forms.Label();
+            this.grpUtilisateur = new System.Windows.Forms.GroupBox();
+            this.radioLucas = new System.Windows.Forms.RadioButton();
+            this.radioClemence = new System.Windows.Forms.RadioButton();
+            this.radioTous = new System.Windows.Forms.RadioButton();
+            this.dgvSeries = new System.Windows.Forms.DataGridView();
+            this.lblResultat = new System.Windows.Forms.Label();
+            this.cmbAnnee = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtRecherche = new System.Windows.Forms.TextBox();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnSequel = new System.Windows.Forms.Button();
             this.imgNote6 = new System.Windows.Forms.PictureBox();
             this.imgNote2 = new System.Windows.Forms.PictureBox();
             this.imgNote5 = new System.Windows.Forms.PictureBox();
             this.imgNote4 = new System.Windows.Forms.PictureBox();
             this.imgNote3 = new System.Windows.Forms.PictureBox();
             this.imgNote1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblTitre = new System.Windows.Forms.Label();
             this.imgPlateforme = new System.Windows.Forms.PictureBox();
-            this.lblPlateforme = new System.Windows.Forms.Label();
-            this.lblUtilisateur = new System.Windows.Forms.Label();
-            this.lblDate = new System.Windows.Forms.Label();
-            this.lblCommentaire = new System.Windows.Forms.Label();
-            this.lblSaison = new System.Windows.Forms.Label();
-            this.lblSortie = new System.Windows.Forms.Label();
-            this.lblNote = new System.Windows.Forms.Label();
             this.imgSerie = new System.Windows.Forms.PictureBox();
             this.btnSupprimer = new System.Windows.Forms.Button();
             this.btnModifier = new System.Windows.Forms.Button();
             this.btnAjout = new System.Windows.Forms.Button();
-            this.grpUtilisateur = new System.Windows.Forms.GroupBox();
-            this.radioLucas = new System.Windows.Forms.RadioButton();
-            this.radioClemence = new System.Windows.Forms.RadioButton();
-            this.radioTous = new System.Windows.Forms.RadioButton();
-            this.dgvSeries = new System.Windows.Forms.DataGridView();
-            this.grpTri = new System.Windows.Forms.GroupBox();
-            this.radioNote = new System.Windows.Forms.RadioButton();
-            this.radioDateAsc = new System.Windows.Forms.RadioButton();
-            this.radioDateDesc = new System.Windows.Forms.RadioButton();
-            this.lblResultat = new System.Windows.Forms.Label();
             this.grpFiche.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.grpUtilisateur.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSeries)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgNote6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgNote2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgNote5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgNote4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgNote3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgNote1)).BeginInit();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgPlateforme)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgSerie)).BeginInit();
-            this.grpUtilisateur.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSeries)).BeginInit();
-            this.grpTri.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpFiche
             // 
             this.grpFiche.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpFiche.Controls.Add(this.lblImdb);
             this.grpFiche.Controls.Add(this.lblCasting);
             this.grpFiche.Controls.Add(this.lblGenre);
             this.grpFiche.Controls.Add(this.imgNote6);
@@ -92,19 +94,28 @@ namespace MyList.Vue
             this.grpFiche.Controls.Add(this.panel1);
             this.grpFiche.Controls.Add(this.imgPlateforme);
             this.grpFiche.Controls.Add(this.lblPlateforme);
-            this.grpFiche.Controls.Add(this.lblUtilisateur);
             this.grpFiche.Controls.Add(this.lblDate);
             this.grpFiche.Controls.Add(this.lblCommentaire);
             this.grpFiche.Controls.Add(this.lblSaison);
             this.grpFiche.Controls.Add(this.lblSortie);
             this.grpFiche.Controls.Add(this.lblNote);
             this.grpFiche.Controls.Add(this.imgSerie);
-            this.grpFiche.Location = new System.Drawing.Point(490, 28);
+            this.grpFiche.Location = new System.Drawing.Point(692, 28);
             this.grpFiche.Name = "grpFiche";
-            this.grpFiche.Size = new System.Drawing.Size(1184, 679);
+            this.grpFiche.Size = new System.Drawing.Size(1184, 692);
             this.grpFiche.TabIndex = 17;
             this.grpFiche.TabStop = false;
-            this.grpFiche.Text = "Fiche";
+            // 
+            // lblImdb
+            // 
+            this.lblImdb.AutoSize = true;
+            this.lblImdb.Location = new System.Drawing.Point(946, 465);
+            this.lblImdb.Name = "lblImdb";
+            this.lblImdb.Size = new System.Drawing.Size(138, 20);
+            this.lblImdb.TabIndex = 30;
+            this.lblImdb.TabStop = true;
+            this.lblImdb.Text = "Voir la page IMDB";
+            this.lblImdb.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblImdb_LinkClicked);
             // 
             // lblCasting
             // 
@@ -127,6 +138,237 @@ namespace MyList.Vue
             this.lblGenre.Size = new System.Drawing.Size(91, 21);
             this.lblGenre.TabIndex = 28;
             this.lblGenre.Text = "Genre(s) :";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.lblTitre);
+            this.panel1.Location = new System.Drawing.Point(592, 25);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(549, 84);
+            this.panel1.TabIndex = 11;
+            // 
+            // lblTitre
+            // 
+            this.lblTitre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTitre.Font = new System.Drawing.Font("Cambria", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitre.Location = new System.Drawing.Point(20, 0);
+            this.lblTitre.Name = "lblTitre";
+            this.lblTitre.Size = new System.Drawing.Size(510, 84);
+            this.lblTitre.TabIndex = 1;
+            this.lblTitre.Text = "Titre";
+            this.lblTitre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblPlateforme
+            // 
+            this.lblPlateforme.AutoSize = true;
+            this.lblPlateforme.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlateforme.Location = new System.Drawing.Point(946, 144);
+            this.lblPlateforme.Name = "lblPlateforme";
+            this.lblPlateforme.Size = new System.Drawing.Size(106, 21);
+            this.lblPlateforme.TabIndex = 9;
+            this.lblPlateforme.Text = "Plateforme :";
+            // 
+            // lblDate
+            // 
+            this.lblDate.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lblDate.AutoSize = true;
+            this.lblDate.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.Location = new System.Drawing.Point(588, 646);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(79, 21);
+            this.lblDate.TabIndex = 6;
+            this.lblDate.Text = "Ajouté le";
+            // 
+            // lblCommentaire
+            // 
+            this.lblCommentaire.AutoSize = true;
+            this.lblCommentaire.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCommentaire.Location = new System.Drawing.Point(588, 544);
+            this.lblCommentaire.MaximumSize = new System.Drawing.Size(549, 0);
+            this.lblCommentaire.Name = "lblCommentaire";
+            this.lblCommentaire.Size = new System.Drawing.Size(116, 21);
+            this.lblCommentaire.TabIndex = 5;
+            this.lblCommentaire.Text = "Commentaire";
+            // 
+            // lblSaison
+            // 
+            this.lblSaison.AutoSize = true;
+            this.lblSaison.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSaison.Location = new System.Drawing.Point(588, 224);
+            this.lblSaison.Name = "lblSaison";
+            this.lblSaison.Size = new System.Drawing.Size(65, 21);
+            this.lblSaison.TabIndex = 4;
+            this.lblSaison.Text = "Saison";
+            // 
+            // lblSortie
+            // 
+            this.lblSortie.AutoSize = true;
+            this.lblSortie.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSortie.Location = new System.Drawing.Point(588, 144);
+            this.lblSortie.Name = "lblSortie";
+            this.lblSortie.Size = new System.Drawing.Size(135, 21);
+            this.lblSortie.TabIndex = 3;
+            this.lblSortie.Text = "Année de sortie";
+            // 
+            // lblNote
+            // 
+            this.lblNote.AutoSize = true;
+            this.lblNote.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNote.Location = new System.Drawing.Point(588, 464);
+            this.lblNote.Name = "lblNote";
+            this.lblNote.Size = new System.Drawing.Size(58, 21);
+            this.lblNote.TabIndex = 2;
+            this.lblNote.Text = "Note :";
+            // 
+            // grpUtilisateur
+            // 
+            this.grpUtilisateur.Controls.Add(this.radioLucas);
+            this.grpUtilisateur.Controls.Add(this.radioClemence);
+            this.grpUtilisateur.Controls.Add(this.radioTous);
+            this.grpUtilisateur.Location = new System.Drawing.Point(22, 28);
+            this.grpUtilisateur.Name = "grpUtilisateur";
+            this.grpUtilisateur.Size = new System.Drawing.Size(208, 125);
+            this.grpUtilisateur.TabIndex = 13;
+            this.grpUtilisateur.TabStop = false;
+            this.grpUtilisateur.Text = "Selection de l\'utilisateur";
+            // 
+            // radioLucas
+            // 
+            this.radioLucas.AutoSize = true;
+            this.radioLucas.Location = new System.Drawing.Point(6, 85);
+            this.radioLucas.Name = "radioLucas";
+            this.radioLucas.Size = new System.Drawing.Size(77, 24);
+            this.radioLucas.TabIndex = 2;
+            this.radioLucas.Text = "Lucas";
+            this.radioLucas.UseVisualStyleBackColor = true;
+            this.radioLucas.CheckedChanged += new System.EventHandler(this.radioLucas_CheckedChanged);
+            // 
+            // radioClemence
+            // 
+            this.radioClemence.AutoSize = true;
+            this.radioClemence.Location = new System.Drawing.Point(6, 55);
+            this.radioClemence.Name = "radioClemence";
+            this.radioClemence.Size = new System.Drawing.Size(70, 24);
+            this.radioClemence.TabIndex = 1;
+            this.radioClemence.Text = "Clem";
+            this.radioClemence.UseVisualStyleBackColor = true;
+            this.radioClemence.CheckedChanged += new System.EventHandler(this.radioClemence_CheckedChanged);
+            // 
+            // radioTous
+            // 
+            this.radioTous.AutoSize = true;
+            this.radioTous.Checked = true;
+            this.radioTous.Location = new System.Drawing.Point(6, 25);
+            this.radioTous.Name = "radioTous";
+            this.radioTous.Size = new System.Drawing.Size(69, 24);
+            this.radioTous.TabIndex = 0;
+            this.radioTous.TabStop = true;
+            this.radioTous.Text = "Tous";
+            this.radioTous.UseVisualStyleBackColor = true;
+            this.radioTous.CheckedChanged += new System.EventHandler(this.radioTous_CheckedChanged);
+            // 
+            // dgvSeries
+            // 
+            this.dgvSeries.AllowUserToAddRows = false;
+            this.dgvSeries.AllowUserToDeleteRows = false;
+            this.dgvSeries.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvSeries.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvSeries.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSeries.Location = new System.Drawing.Point(22, 206);
+            this.dgvSeries.MultiSelect = false;
+            this.dgvSeries.Name = "dgvSeries";
+            this.dgvSeries.ReadOnly = true;
+            this.dgvSeries.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dgvSeries.RowTemplate.Height = 28;
+            this.dgvSeries.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSeries.Size = new System.Drawing.Size(650, 448);
+            this.dgvSeries.TabIndex = 12;
+            this.dgvSeries.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvSeries_CellFormatting);
+            this.dgvSeries.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvSeries_ColumnHeaderMouseClick);
+            this.dgvSeries.SelectionChanged += new System.EventHandler(this.dgvSeries_SelectionChanged);
+            // 
+            // lblResultat
+            // 
+            this.lblResultat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblResultat.AutoSize = true;
+            this.lblResultat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResultat.Location = new System.Drawing.Point(454, 668);
+            this.lblResultat.Name = "lblResultat";
+            this.lblResultat.Size = new System.Drawing.Size(220, 22);
+            this.lblResultat.TabIndex = 19;
+            this.lblResultat.Text = "Nombre d\'enregistrements";
+            // 
+            // cmbAnnee
+            // 
+            this.cmbAnnee.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbAnnee.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbAnnee.FormattingEnabled = true;
+            this.cmbAnnee.Items.AddRange(new object[] {
+            "2022",
+            "2023",
+            "All"});
+            this.cmbAnnee.Location = new System.Drawing.Point(552, 170);
+            this.cmbAnnee.Name = "cmbAnnee";
+            this.cmbAnnee.Size = new System.Drawing.Size(120, 28);
+            this.cmbAnnee.TabIndex = 28;
+            this.cmbAnnee.SelectedIndexChanged += new System.EventHandler(this.cmbAnnee_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(469, 171);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 22);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "Année : ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(18, 171);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 22);
+            this.label2.TabIndex = 34;
+            this.label2.Text = "Titre : ";
+            // 
+            // txtRecherche
+            // 
+            this.txtRecherche.Location = new System.Drawing.Point(92, 170);
+            this.txtRecherche.Name = "txtRecherche";
+            this.txtRecherche.Size = new System.Drawing.Size(262, 26);
+            this.txtRecherche.TabIndex = 35;
+            this.txtRecherche.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRecherche_KeyPress);
+            // 
+            // btnReset
+            // 
+            this.btnReset.FlatAppearance.BorderSize = 0;
+            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReset.Image = global::MyList.Properties.Resources._return;
+            this.btnReset.Location = new System.Drawing.Point(360, 161);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(44, 44);
+            this.btnReset.TabIndex = 36;
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // btnSequel
+            // 
+            this.btnSequel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSequel.FlatAppearance.BorderSize = 0;
+            this.btnSequel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSequel.Image = global::MyList.Properties.Resources.copy;
+            this.btnSequel.Location = new System.Drawing.Point(262, 668);
+            this.btnSequel.Name = "btnSequel";
+            this.btnSequel.Size = new System.Drawing.Size(64, 64);
+            this.btnSequel.TabIndex = 32;
+            this.btnSequel.UseVisualStyleBackColor = true;
+            this.btnSequel.Click += new System.EventHandler(this.btnSequel_Click);
             // 
             // imgNote6
             // 
@@ -188,26 +430,6 @@ namespace MyList.Vue
             this.imgNote1.TabIndex = 12;
             this.imgNote1.TabStop = false;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Controls.Add(this.lblTitre);
-            this.panel1.Location = new System.Drawing.Point(592, 25);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(549, 84);
-            this.panel1.TabIndex = 11;
-            // 
-            // lblTitre
-            // 
-            this.lblTitre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTitre.Font = new System.Drawing.Font("Cambria", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitre.Location = new System.Drawing.Point(20, 0);
-            this.lblTitre.Name = "lblTitre";
-            this.lblTitre.Size = new System.Drawing.Size(510, 84);
-            this.lblTitre.TabIndex = 1;
-            this.lblTitre.Text = "Titre";
-            this.lblTitre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // imgPlateforme
             // 
             this.imgPlateforme.Location = new System.Drawing.Point(1056, 124);
@@ -217,257 +439,74 @@ namespace MyList.Vue
             this.imgPlateforme.TabIndex = 10;
             this.imgPlateforme.TabStop = false;
             // 
-            // lblPlateforme
-            // 
-            this.lblPlateforme.AutoSize = true;
-            this.lblPlateforme.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlateforme.Location = new System.Drawing.Point(946, 144);
-            this.lblPlateforme.Name = "lblPlateforme";
-            this.lblPlateforme.Size = new System.Drawing.Size(106, 21);
-            this.lblPlateforme.TabIndex = 9;
-            this.lblPlateforme.Text = "Plateforme :";
-            // 
-            // lblUtilisateur
-            // 
-            this.lblUtilisateur.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.lblUtilisateur.AutoSize = true;
-            this.lblUtilisateur.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUtilisateur.Location = new System.Drawing.Point(946, 633);
-            this.lblUtilisateur.Name = "lblUtilisateur";
-            this.lblUtilisateur.Size = new System.Drawing.Size(91, 21);
-            this.lblUtilisateur.TabIndex = 7;
-            this.lblUtilisateur.Text = "Ajouté par";
-            // 
-            // lblDate
-            // 
-            this.lblDate.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.lblDate.AutoSize = true;
-            this.lblDate.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(588, 633);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(79, 21);
-            this.lblDate.TabIndex = 6;
-            this.lblDate.Text = "Ajouté le";
-            // 
-            // lblCommentaire
-            // 
-            this.lblCommentaire.AutoSize = true;
-            this.lblCommentaire.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCommentaire.Location = new System.Drawing.Point(588, 544);
-            this.lblCommentaire.MaximumSize = new System.Drawing.Size(549, 0);
-            this.lblCommentaire.Name = "lblCommentaire";
-            this.lblCommentaire.Size = new System.Drawing.Size(116, 21);
-            this.lblCommentaire.TabIndex = 5;
-            this.lblCommentaire.Text = "Commentaire";
-            // 
-            // lblSaison
-            // 
-            this.lblSaison.AutoSize = true;
-            this.lblSaison.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSaison.Location = new System.Drawing.Point(588, 224);
-            this.lblSaison.Name = "lblSaison";
-            this.lblSaison.Size = new System.Drawing.Size(65, 21);
-            this.lblSaison.TabIndex = 4;
-            this.lblSaison.Text = "Saison";
-            // 
-            // lblSortie
-            // 
-            this.lblSortie.AutoSize = true;
-            this.lblSortie.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortie.Location = new System.Drawing.Point(588, 144);
-            this.lblSortie.Name = "lblSortie";
-            this.lblSortie.Size = new System.Drawing.Size(135, 21);
-            this.lblSortie.TabIndex = 3;
-            this.lblSortie.Text = "Année de sortie";
-            // 
-            // lblNote
-            // 
-            this.lblNote.AutoSize = true;
-            this.lblNote.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNote.Location = new System.Drawing.Point(588, 464);
-            this.lblNote.Name = "lblNote";
-            this.lblNote.Size = new System.Drawing.Size(58, 21);
-            this.lblNote.TabIndex = 2;
-            this.lblNote.Text = "Note :";
-            // 
             // imgSerie
             // 
             this.imgSerie.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.imgSerie.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgSerie.Location = new System.Drawing.Point(15, 25);
             this.imgSerie.Name = "imgSerie";
-            this.imgSerie.Size = new System.Drawing.Size(538, 629);
+            this.imgSerie.Size = new System.Drawing.Size(538, 642);
             this.imgSerie.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.imgSerie.TabIndex = 0;
             this.imgSerie.TabStop = false;
+            this.imgSerie.Click += new System.EventHandler(this.imgSerie_Click);
             // 
             // btnSupprimer
             // 
             this.btnSupprimer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSupprimer.FlatAppearance.BorderSize = 0;
             this.btnSupprimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSupprimer.Location = new System.Drawing.Point(357, 665);
+            this.btnSupprimer.Image = global::MyList.Properties.Resources.delete;
+            this.btnSupprimer.Location = new System.Drawing.Point(182, 668);
             this.btnSupprimer.Name = "btnSupprimer";
-            this.btnSupprimer.Size = new System.Drawing.Size(114, 38);
+            this.btnSupprimer.Size = new System.Drawing.Size(64, 64);
             this.btnSupprimer.TabIndex = 16;
-            this.btnSupprimer.Text = "Supprimer";
             this.btnSupprimer.UseVisualStyleBackColor = true;
             this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
+            this.btnSupprimer.MouseHover += new System.EventHandler(this.btnSupprimer_MouseHover);
             // 
             // btnModifier
             // 
             this.btnModifier.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnModifier.FlatAppearance.BorderSize = 0;
             this.btnModifier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModifier.Location = new System.Drawing.Point(190, 665);
+            this.btnModifier.Image = global::MyList.Properties.Resources.edit;
+            this.btnModifier.Location = new System.Drawing.Point(102, 668);
             this.btnModifier.Name = "btnModifier";
-            this.btnModifier.Size = new System.Drawing.Size(114, 38);
+            this.btnModifier.Size = new System.Drawing.Size(64, 64);
             this.btnModifier.TabIndex = 15;
-            this.btnModifier.Text = "Modifier";
             this.btnModifier.UseVisualStyleBackColor = true;
             this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
+            this.btnModifier.MouseHover += new System.EventHandler(this.btnModifier_MouseHover);
             // 
             // btnAjout
             // 
             this.btnAjout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAjout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAjout.FlatAppearance.BorderSize = 0;
             this.btnAjout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAjout.Location = new System.Drawing.Point(22, 666);
+            this.btnAjout.Image = global::MyList.Properties.Resources.plus;
+            this.btnAjout.Location = new System.Drawing.Point(22, 668);
             this.btnAjout.Name = "btnAjout";
-            this.btnAjout.Size = new System.Drawing.Size(114, 38);
+            this.btnAjout.Size = new System.Drawing.Size(64, 64);
             this.btnAjout.TabIndex = 14;
-            this.btnAjout.Text = "Ajouter";
             this.btnAjout.UseVisualStyleBackColor = true;
             this.btnAjout.Click += new System.EventHandler(this.btnAjout_Click);
-            // 
-            // grpUtilisateur
-            // 
-            this.grpUtilisateur.Controls.Add(this.radioLucas);
-            this.grpUtilisateur.Controls.Add(this.radioClemence);
-            this.grpUtilisateur.Controls.Add(this.radioTous);
-            this.grpUtilisateur.Location = new System.Drawing.Point(22, 28);
-            this.grpUtilisateur.Name = "grpUtilisateur";
-            this.grpUtilisateur.Size = new System.Drawing.Size(208, 125);
-            this.grpUtilisateur.TabIndex = 13;
-            this.grpUtilisateur.TabStop = false;
-            this.grpUtilisateur.Text = "Selection de l\'utilisateur";
-            // 
-            // radioLucas
-            // 
-            this.radioLucas.AutoSize = true;
-            this.radioLucas.Location = new System.Drawing.Point(6, 85);
-            this.radioLucas.Name = "radioLucas";
-            this.radioLucas.Size = new System.Drawing.Size(77, 24);
-            this.radioLucas.TabIndex = 2;
-            this.radioLucas.Text = "Lucas";
-            this.radioLucas.UseVisualStyleBackColor = true;
-            this.radioLucas.CheckedChanged += new System.EventHandler(this.radioLucas_CheckedChanged);
-            // 
-            // radioClemence
-            // 
-            this.radioClemence.AutoSize = true;
-            this.radioClemence.Location = new System.Drawing.Point(6, 55);
-            this.radioClemence.Name = "radioClemence";
-            this.radioClemence.Size = new System.Drawing.Size(70, 24);
-            this.radioClemence.TabIndex = 1;
-            this.radioClemence.Text = "Clem";
-            this.radioClemence.UseVisualStyleBackColor = true;
-            this.radioClemence.CheckedChanged += new System.EventHandler(this.radioClemence_CheckedChanged);
-            // 
-            // radioTous
-            // 
-            this.radioTous.AutoSize = true;
-            this.radioTous.Checked = true;
-            this.radioTous.Location = new System.Drawing.Point(6, 25);
-            this.radioTous.Name = "radioTous";
-            this.radioTous.Size = new System.Drawing.Size(69, 24);
-            this.radioTous.TabIndex = 0;
-            this.radioTous.TabStop = true;
-            this.radioTous.Text = "Tous";
-            this.radioTous.UseVisualStyleBackColor = true;
-            this.radioTous.CheckedChanged += new System.EventHandler(this.radioTous_CheckedChanged);
-            // 
-            // dgvSeries
-            // 
-            this.dgvSeries.AllowUserToAddRows = false;
-            this.dgvSeries.AllowUserToDeleteRows = false;
-            this.dgvSeries.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvSeries.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSeries.Location = new System.Drawing.Point(22, 206);
-            this.dgvSeries.MultiSelect = false;
-            this.dgvSeries.Name = "dgvSeries";
-            this.dgvSeries.ReadOnly = true;
-            this.dgvSeries.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dgvSeries.RowTemplate.Height = 28;
-            this.dgvSeries.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSeries.Size = new System.Drawing.Size(448, 435);
-            this.dgvSeries.TabIndex = 12;
-            this.dgvSeries.SelectionChanged += new System.EventHandler(this.dgvSeries_SelectionChanged);
-            // 
-            // grpTri
-            // 
-            this.grpTri.Controls.Add(this.radioNote);
-            this.grpTri.Controls.Add(this.radioDateAsc);
-            this.grpTri.Controls.Add(this.radioDateDesc);
-            this.grpTri.Location = new System.Drawing.Point(262, 29);
-            this.grpTri.Name = "grpTri";
-            this.grpTri.Size = new System.Drawing.Size(208, 125);
-            this.grpTri.TabIndex = 18;
-            this.grpTri.TabStop = false;
-            this.grpTri.Text = "Trier par";
-            // 
-            // radioNote
-            // 
-            this.radioNote.AutoSize = true;
-            this.radioNote.Location = new System.Drawing.Point(6, 84);
-            this.radioNote.Name = "radioNote";
-            this.radioNote.Size = new System.Drawing.Size(68, 24);
-            this.radioNote.TabIndex = 2;
-            this.radioNote.Text = "Note";
-            this.radioNote.UseVisualStyleBackColor = true;
-            this.radioNote.CheckedChanged += new System.EventHandler(this.radioNote_CheckedChanged);
-            // 
-            // radioDateAsc
-            // 
-            this.radioDateAsc.AutoSize = true;
-            this.radioDateAsc.Location = new System.Drawing.Point(6, 54);
-            this.radioDateAsc.Name = "radioDateAsc";
-            this.radioDateAsc.Size = new System.Drawing.Size(81, 24);
-            this.radioDateAsc.TabIndex = 1;
-            this.radioDateAsc.Text = "Date ↑";
-            this.radioDateAsc.UseVisualStyleBackColor = true;
-            this.radioDateAsc.CheckedChanged += new System.EventHandler(this.radioDateAsc_CheckedChanged);
-            // 
-            // radioDateDesc
-            // 
-            this.radioDateDesc.AutoSize = true;
-            this.radioDateDesc.Checked = true;
-            this.radioDateDesc.Location = new System.Drawing.Point(6, 24);
-            this.radioDateDesc.Name = "radioDateDesc";
-            this.radioDateDesc.Size = new System.Drawing.Size(81, 24);
-            this.radioDateDesc.TabIndex = 0;
-            this.radioDateDesc.TabStop = true;
-            this.radioDateDesc.Text = "Date ↓";
-            this.radioDateDesc.UseVisualStyleBackColor = true;
-            this.radioDateDesc.CheckedChanged += new System.EventHandler(this.radioDateDesc_CheckedChanged);
-            // 
-            // lblResultat
-            // 
-            this.lblResultat.AutoSize = true;
-            this.lblResultat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResultat.Location = new System.Drawing.Point(18, 171);
-            this.lblResultat.Name = "lblResultat";
-            this.lblResultat.Size = new System.Drawing.Size(220, 22);
-            this.lblResultat.TabIndex = 19;
-            this.lblResultat.Text = "Nombre d\'enregistrements";
+            this.btnAjout.MouseHover += new System.EventHandler(this.btnAjout_MouseHover);
             // 
             // FrmSeries
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1696, 731);
+            this.ClientSize = new System.Drawing.Size(1898, 744);
+            this.Controls.Add(this.btnReset);
+            this.Controls.Add(this.txtRecherche);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnSequel);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cmbAnnee);
             this.Controls.Add(this.lblResultat);
-            this.Controls.Add(this.grpTri);
             this.Controls.Add(this.grpFiche);
             this.Controls.Add(this.btnSupprimer);
             this.Controls.Add(this.btnModifier);
@@ -476,23 +515,22 @@ namespace MyList.Vue
             this.Controls.Add(this.dgvSeries);
             this.Name = "FrmSeries";
             this.Text = "SERIES";
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Load += new System.EventHandler(this.FrmSeries_Load);
             this.grpFiche.ResumeLayout(false);
             this.grpFiche.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.grpUtilisateur.ResumeLayout(false);
+            this.grpUtilisateur.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSeries)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgNote6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgNote2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgNote5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgNote4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgNote3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgNote1)).EndInit();
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgPlateforme)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgSerie)).EndInit();
-            this.grpUtilisateur.ResumeLayout(false);
-            this.grpUtilisateur.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSeries)).EndInit();
-            this.grpTri.ResumeLayout(false);
-            this.grpTri.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -511,7 +549,6 @@ namespace MyList.Vue
         private System.Windows.Forms.RadioButton radioClemence;
         private System.Windows.Forms.RadioButton radioTous;
         private System.Windows.Forms.DataGridView dgvSeries;
-        private System.Windows.Forms.Label lblUtilisateur;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lblCommentaire;
         private System.Windows.Forms.Label lblSaison;
@@ -526,12 +563,15 @@ namespace MyList.Vue
         private System.Windows.Forms.PictureBox imgNote4;
         private System.Windows.Forms.PictureBox imgNote3;
         private System.Windows.Forms.PictureBox imgNote1;
-        private System.Windows.Forms.GroupBox grpTri;
-        private System.Windows.Forms.RadioButton radioNote;
-        private System.Windows.Forms.RadioButton radioDateAsc;
-        private System.Windows.Forms.RadioButton radioDateDesc;
         private System.Windows.Forms.Label lblGenre;
         private System.Windows.Forms.Label lblCasting;
         private System.Windows.Forms.Label lblResultat;
+        private System.Windows.Forms.LinkLabel lblImdb;
+        private System.Windows.Forms.ComboBox cmbAnnee;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnSequel;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtRecherche;
+        private System.Windows.Forms.Button btnReset;
     }
 }

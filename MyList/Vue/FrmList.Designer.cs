@@ -59,7 +59,7 @@ namespace MyList.Vue
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(356, 644);
+            this.panelMenu.Size = new System.Drawing.Size(356, 744);
             this.panelMenu.TabIndex = 0;
             // 
             // btnJeux
@@ -157,7 +157,7 @@ namespace MyList.Vue
             this.panelTitre.Location = new System.Drawing.Point(356, 0);
             this.panelTitre.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelTitre.Name = "panelTitre";
-            this.panelTitre.Size = new System.Drawing.Size(1142, 123);
+            this.panelTitre.Size = new System.Drawing.Size(1422, 123);
             this.panelTitre.TabIndex = 1;
             // 
             // btnClose
@@ -183,7 +183,7 @@ namespace MyList.Vue
             this.lblTitre.Location = new System.Drawing.Point(0, 32);
             this.lblTitre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitre.Name = "lblTitre";
-            this.lblTitre.Size = new System.Drawing.Size(1142, 55);
+            this.lblTitre.Size = new System.Drawing.Size(1422, 55);
             this.lblTitre.TabIndex = 0;
             this.lblTitre.Text = "MyList";
             this.lblTitre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -196,7 +196,7 @@ namespace MyList.Vue
             this.panelDesktop.Location = new System.Drawing.Point(356, 123);
             this.panelDesktop.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(1142, 521);
+            this.panelDesktop.Size = new System.Drawing.Size(1422, 621);
             this.panelDesktop.TabIndex = 2;
             // 
             // imgBackground
@@ -206,7 +206,7 @@ namespace MyList.Vue
             this.imgBackground.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.imgBackground.MaximumSize = new System.Drawing.Size(3000, 3077);
             this.imgBackground.Name = "imgBackground";
-            this.imgBackground.Size = new System.Drawing.Size(1142, 521);
+            this.imgBackground.Size = new System.Drawing.Size(1422, 621);
             this.imgBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgBackground.TabIndex = 0;
             this.imgBackground.TabStop = false;
@@ -215,16 +215,17 @@ namespace MyList.Vue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1498, 644);
+            this.ClientSize = new System.Drawing.Size(1778, 744);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelTitre);
             this.Controls.Add(this.panelMenu);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.MaximumSize = new System.Drawing.Size(1720, 800);
+            this.MaximumSize = new System.Drawing.Size(1920, 800);
             this.MinimumSize = new System.Drawing.Size(1520, 700);
             this.Name = "FrmList";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MyList";
             this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);

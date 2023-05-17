@@ -248,23 +248,20 @@
     <Content Include="Core\Compression\Snappy\lib\win\snappy64.dll" />
     <Content Include="Core\Compression\Zstandard\lib\win\libzstd.dll" />
     <Content Include="mongocrypt.dll" />
+    <None Include="Resources\return.png" />
+    <None Include="Resources\edit.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\copy.png" />
+    <None Include="Resources\plus.png" />
     <None Include="Resources\002-favorite-1.png" />
     <None Include="Resources\001-favorite.png" />
-    <None Include="Resources\BlueStar.png" />
-    <None Include="Resources\GoldStar.png" />
     <None Include="Resources\icons8-close-50.png" />
-    <None Include="Resources\netflix.png" />
-    <None Include="Resources\amazon.png" />
-    <None Include="Resources\MyListLogo1.PNG" />
-    <None Include="Resources\MyListLogo.PNG" />
     <None Include="Resources\icons8-game-controller-30.png" />
     <None Include="Resources\icons8-tv-show-30.png" />
     <None Include="Resources\icons8-cinema-30.png" />
     <None Include="Resources\icons8-game-controller-60.png" />
     <None Include="Resources\icons8-tv-show-60.png" />
     <None Include="Resources\icons8-cinema-60.png" />
-    <None Include="Resources\add_circle.png" />
-    <None Include="Resources\add.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MongoDB.Libmongocrypt.1.3.0\build\MongoDB.Libmongocrypt.targets" Condition="Exists('..\packages\MongoDB.Libmongocrypt.1.3.0\build\MongoDB.Libmongocrypt.targets')" />

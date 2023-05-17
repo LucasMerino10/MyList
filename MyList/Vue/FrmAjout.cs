@@ -59,11 +59,12 @@ namespace MyList.Vue
             {
                 DetectionMedia();
             }
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void btnValider_Click(object sender, EventArgs e)
         {
-            if (operation == "Ajouter")
+            if (operation == "Ajouter" || operation == "Ajouter une suite")
             {
                 if (lblImage.Text != "")
                 {
@@ -75,13 +76,13 @@ namespace MyList.Vue
                             switch (typeMedia)
                             {
                                 case "Film":
-                                    controle.AjoutFilm(cboUtilisateur.Text, txtBoxTitre.Text, int.Parse(txtBoxSpe.Text), int.Parse(txtBoxSortie.Text), txtBoxCasting.Text, int.Parse(cboNote.Text), txtBoxCommentaire.Text, cboPlateforme.Text, image + ext, DateTime.Now, txtRealisateur.Text, txtGenre.Text);
+                                    controle.AjoutFilm(cboUtilisateur.Text, txtBoxTitre.Text, int.Parse(txtBoxSpe.Text), int.Parse(txtBoxSortie.Text), txtBoxCasting.Text, double.Parse(cboNote.Text), txtBoxCommentaire.Text, cboPlateforme.Text, image + ext, DateTime.Now, txtRealisateur.Text, txtGenre.Text, txtImdb.Text);
                                     break;
                                 case "Série":
-                                    controle.AjoutSerie(cboUtilisateur.Text, txtBoxTitre.Text, int.Parse(txtBoxSortie.Text), int.Parse(txtBoxSpe.Text), int.Parse(cboNote.Text), txtBoxCommentaire.Text, cboPlateforme.Text, DateTime.Now, image + ext, txtBoxCasting.Text, txtGenre.Text);
+                                    controle.AjoutSerie(cboUtilisateur.Text, txtBoxTitre.Text, int.Parse(txtBoxSortie.Text), int.Parse(txtBoxSpe.Text), double.Parse(cboNote.Text), txtBoxCommentaire.Text, cboPlateforme.Text, DateTime.Now, image + ext, txtBoxCasting.Text, txtGenre.Text, txtImdb.Text);
                                     break;
                                 case "Jeu Video":
-                                    controle.AjoutJeu(cboUtilisateur.Text, txtBoxTitre.Text, int.Parse(txtBoxSortie.Text), int.Parse(cboNote.Text), txtBoxCommentaire.Text, cboPlateforme.Text, int.Parse(txtBoxSpe.Text), image + ext, DateTime.Now, txtRealisateur.Text, txtGenre.Text);
+                                    controle.AjoutJeu(cboUtilisateur.Text, txtBoxTitre.Text, int.Parse(txtBoxSortie.Text), double.Parse(cboNote.Text), txtBoxCommentaire.Text, cboPlateforme.Text, int.Parse(txtBoxSpe.Text), image + ext, DateTime.Now, txtRealisateur.Text, txtGenre.Text);
                                     break;
                             }
                             MessageBox.Show("Fiche ajoutée avec succès!", "Succès");
@@ -147,17 +148,38 @@ namespace MyList.Vue
                 case "Film":
                     radioFilm.Checked = true;
                     Film film = (Film)media;
-                    LoadFilm(film);
+                    if (operation == "Modifier")
+                    {
+                        LoadFilm(film);
+                    }
+                    else
+                    {
+                        LoadBaseFilm(film);
+                    }
                     break;
                 case "Série":
                     radioSérie.Checked = true;
                     Serie serie = (Serie)media;
-                    LoadSerie(serie);
+                    if (operation == "Modifier")
+                    {
+                        LoadSerie(serie);
+                    }
+                    else
+                    {
+                        LoadBaseSerie(serie);
+                    }
                     break;
                 case "Jeu Video":
                     radioJeu.Checked = true;
                     Jeu jeu = (Jeu)media;
-                    LoadJeu(jeu);
+                    if (operation == "Modifier")
+                    {
+                        LoadJeu(jeu);
+                    }
+                    else
+                    {
+                        LoadBaseJeu(jeu);
+                    }
                     break;
             }
         }
@@ -178,49 +200,91 @@ namespace MyList.Vue
             }
         }
 
-        private void LoadSerie(Serie serie)
+        /// <summary>
+        /// Pré-rempli les informations de bases pour l'ajout d'une suite
+        /// </summary>
+        /// <param name="serie"></param>
+        private void LoadBaseSerie(Serie serie)
         {
+            int saison = serie.saison + 1;
             cboUtilisateur.SelectedItem = serie.utilisateur;
             txtBoxTitre.Text = serie.titre;
-            txtBoxSortie.Text = serie.sortie.ToString();
-            txtBoxSpe.Text = serie.saison.ToString();
             txtGenre.Text = serie.genre;
+            txtBoxSpe.Text = saison.ToString();
             cboPlateforme.SelectedItem = serie.plateforme;
-            cboNote.SelectedItem = serie.note.ToString();
-            txtBoxCommentaire.Text = serie.commentaire;
             txtBoxCasting.Text = serie.casting;
+        }
+
+        /// <summary>
+        /// Rempli toutes les informations pour une modification 
+        /// </summary>
+        /// <param name="serie"></param>
+        private void LoadSerie(Serie serie)
+        {
+            LoadBaseSerie(serie);
+            txtBoxSortie.Text = serie.sortie.ToString();                     
+            cboNote.SelectedItem = serie.note.ToString();
+            txtBoxCommentaire.Text = serie.commentaire;           
             lblImage.Text = serie.img;
+            txtImdb.Text = serie.imdb;
             LoadImageFiche();
         }
 
-        private void LoadJeu(Jeu jeu)
+        /// <summary>
+        /// Pré-rempli les informations de bases pour l'ajout d'une suite
+        /// </summary>
+        /// <param name="serie"></param>
+        private void LoadBaseJeu(Jeu jeu)
         {
             cboUtilisateur.SelectedItem = jeu.utilisateur;
             txtBoxTitre.Text = jeu.titre;
             txtRealisateur.Text = jeu.developpeur;
             txtGenre.Text = jeu.genre;
+            cboPlateforme.SelectedItem = jeu.plateforme;
+        }
+
+        /// <summary>
+        /// Rempli toutes les informations pour une modification 
+        /// </summary>
+        /// <param name="jeu"></param>
+        private void LoadJeu(Jeu jeu)
+        {
+            LoadBaseJeu(jeu);
             txtBoxSortie.Text = jeu.sortie.ToString();
             txtBoxSpe.Text = jeu.tempsJeu.ToString();
-            cboPlateforme.SelectedItem = jeu.plateforme;
             cboNote.SelectedItem = jeu.note.ToString();
             txtBoxCommentaire.Text = jeu.commentaire;
             lblImage.Text = jeu.img;
             LoadImageFiche();
         }
 
-        private void LoadFilm(Film film)
+        /// <summary>
+        /// Pré-rempli les informations de bases pour l'ajout d'une suite
+        /// </summary>
+        /// <param name="serie"></param>
+        private void LoadBaseFilm(Film film)
         {
             cboUtilisateur.SelectedItem = film.utilisateur;
             txtBoxTitre.Text = film.titre;
             txtRealisateur.Text = film.realisateur;
             txtGenre.Text = film.genre;
+            cboPlateforme.SelectedItem = film.plateforme;
+            txtBoxCasting.Text = film.casting;
+        }
+
+        /// <summary>
+        /// Rempli toutes les informations pour une modification 
+        /// </summary>
+        /// <param name="film"></param>
+        private void LoadFilm(Film film)
+        {
+            LoadBaseFilm(film);
             txtBoxSpe.Text = film.duree.ToString();
             txtBoxSortie.Text = film.sortie.ToString();
-            cboPlateforme.SelectedItem = film.plateforme;
-            cboNote.SelectedItem = film.note.ToString();
-            txtBoxCasting.Text = film.casting;
+            cboNote.SelectedItem = film.note.ToString();            
             txtBoxCommentaire.Text = film.commentaire;
             lblImage.Text = film.img;
+            txtImdb.Text = film.imdb;
             LoadImageFiche();
         }
 
@@ -232,12 +296,14 @@ namespace MyList.Vue
             serie.genre = txtGenre.Text;
             serie.sortie = int.Parse(txtBoxSortie.Text);
             serie.saison = int.Parse(txtBoxSpe.Text);
-            serie.note = int.Parse(cboNote.Text);
+            serie.note = double.Parse(cboNote.Text);
             serie.commentaire = txtBoxCommentaire.Text;
             serie.plateforme = cboPlateforme.Text;
+            serie.imdb = txtImdb.Text;
             if (ChangementImage(serie.img))
             {
                 File.Delete(controle.GetImageDirectory() + serie.img);
+                File.Delete(controle.GetLocalImageDirectory() + serie.img);
                 SaveImage();
                 serie.img = image + ext;
             }
@@ -251,13 +317,15 @@ namespace MyList.Vue
             film.genre = txtGenre.Text;
             film.sortie = int.Parse(txtBoxSortie.Text);
             film.duree = int.Parse(txtBoxSpe.Text);
-            film.note = int.Parse(cboNote.Text);
+            film.note = double.Parse(cboNote.Text);
             film.casting = txtBoxCasting.Text;
             film.commentaire = txtBoxCommentaire.Text;
             film.plateforme = cboPlateforme.Text;
+            film.imdb = txtImdb.Text;
             if (ChangementImage(film.img))
             {
                 File.Delete(controle.GetImageDirectory() + film.img);
+                File.Delete(controle.GetLocalImageDirectory() + film.img);
                 SaveImage();
                 film.img = image + ext;
             }
@@ -271,12 +339,13 @@ namespace MyList.Vue
             jeu.developpeur = txtRealisateur.Text;
             jeu.sortie = int.Parse(txtBoxSortie.Text);
             jeu.tempsJeu = int.Parse(txtBoxSpe.Text);
-            jeu.note = int.Parse(cboNote.Text);
+            jeu.note = double.Parse(cboNote.Text);
             jeu.commentaire = txtBoxCommentaire.Text;
             jeu.plateforme = cboPlateforme.Text;
             if (ChangementImage(jeu.img))
             {
                 File.Delete(controle.GetImageDirectory() + jeu.img);
+                File.Delete(controle.GetLocalImageDirectory() + jeu.img);
                 SaveImage();
                 jeu.img = image + ext;
             }
@@ -309,6 +378,8 @@ namespace MyList.Vue
                 lblRealisateurInfo.Visible = true;
                 lblRealisateurInfo.Text = "Réalisateur :";
                 txtRealisateur.Visible = true;
+                lblImdb.Visible = true;
+                txtImdb.Visible = true;
                 ResetFiche();
                 RemplirComboPlateforme();
             }
@@ -327,6 +398,8 @@ namespace MyList.Vue
                 txtRealisateur.Visible = false;
                 txtBoxCasting.Visible = true;
                 lblCastingFiche.Visible = true;
+                lblImdb.Visible = true;
+                txtImdb.Visible = true;
                 ResetFiche();
                 RemplirComboPlateforme();
             }
@@ -347,6 +420,8 @@ namespace MyList.Vue
                 txtRealisateur.Visible = true;
                 txtBoxCasting.Visible = false;
                 lblCastingFiche.Visible = false;
+                lblImdb.Visible = false;
+                txtImdb.Visible = false;
                 ResetFiche();
                 RemplirComboPlateforme();
             }
@@ -449,13 +524,15 @@ namespace MyList.Vue
         /// Gère l'affiche des étoiles qui correspondent à la note
         /// </summary>
         /// <param name="jeu"></param>
-        private void LoadImageNote(int note)
+        private void LoadImageNote(double note)
         {
+            int full = imgNote1.Width;
+            int semi = imgNote1.Width / 2;
             switch (note)
             {
                 case 0:
-                    imgNote1.Visible = true;
                     imgNote1.ImageLocation = controle.GetImageDirectory() + "/logo/redStar.png";
+                    imgNote1.Visible = true;
                     imgNote2.Visible = false;
                     imgNote3.Visible = false;
                     imgNote4.Visible = false;
@@ -463,58 +540,115 @@ namespace MyList.Vue
                     imgNote6.Visible = false;
                     break;
                 case 1:
-                    imgNote1.Visible = true;
                     imgNote1.ImageLocation = controle.GetImageDirectory() + "/logo/goldStar.png";
+                    imgNote1.Visible = true;
                     imgNote2.Visible = false;
                     imgNote3.Visible = false;
                     imgNote4.Visible = false;
                     imgNote5.Visible = false;
                     imgNote6.Visible = false;
                     break;
-                case 2:
-                    imgNote1.Visible = true;
+                case 1.5:
                     imgNote1.ImageLocation = controle.GetImageDirectory() + "/logo/goldStar.png";
+                    imgNote1.Visible = true;
                     imgNote2.Visible = true;
                     imgNote3.Visible = false;
                     imgNote4.Visible = false;
                     imgNote5.Visible = false;
                     imgNote6.Visible = false;
+                    imgNote2.Width = semi;
                     break;
-                case 3:
-                    imgNote1.Visible = true;
+                case 2:
                     imgNote1.ImageLocation = controle.GetImageDirectory() + "/logo/goldStar.png";
+                    imgNote1.Visible = true;
+                    imgNote2.Visible = true;
+                    imgNote3.Visible = false;
+                    imgNote4.Visible = false;
+                    imgNote5.Visible = false;
+                    imgNote6.Visible = false;
+                    imgNote2.Width = full;
+                    break;
+                case 2.5:
+                    imgNote1.ImageLocation = controle.GetImageDirectory() + "/logo/goldStar.png";
+                    imgNote1.Visible = true;
                     imgNote2.Visible = true;
                     imgNote3.Visible = true;
                     imgNote4.Visible = false;
                     imgNote5.Visible = false;
                     imgNote6.Visible = false;
+                    imgNote3.Width = semi;
                     break;
-                case 4:
-                    imgNote1.Visible = true;
+                case 3:
                     imgNote1.ImageLocation = controle.GetImageDirectory() + "/logo/goldStar.png";
+                    imgNote1.Visible = true;
+                    imgNote2.Visible = true;
+                    imgNote3.Visible = true;
+                    imgNote4.Visible = false;
+                    imgNote5.Visible = false;
+                    imgNote6.Visible = false;
+                    imgNote2.Width = full;
+                    imgNote3.Width = full;
+                    break;
+                case 3.5:
+                    imgNote1.ImageLocation = controle.GetImageDirectory() + "/logo/goldStar.png";
+                    imgNote1.Visible = true;
                     imgNote2.Visible = true;
                     imgNote3.Visible = true;
                     imgNote4.Visible = true;
                     imgNote5.Visible = false;
                     imgNote6.Visible = false;
+                    imgNote2.Width = full;
+                    imgNote4.Width = semi;
                     break;
-                case 5:
-                    imgNote1.Visible = true;
+                case 4:
                     imgNote1.ImageLocation = controle.GetImageDirectory() + "/logo/goldStar.png";
+                    imgNote1.Visible = true;
+                    imgNote2.Visible = true;
+                    imgNote3.Visible = true;
+                    imgNote4.Visible = true;
+                    imgNote5.Visible = false;
+                    imgNote6.Visible = false;
+                    imgNote2.Width = full;
+                    imgNote3.Width = full;
+                    imgNote4.Width = full;
+                    break;
+                case 4.5:
+                    imgNote1.ImageLocation = controle.GetImageDirectory() + "/logo/goldStar.png";
+                    imgNote1.Visible = true;
                     imgNote2.Visible = true;
                     imgNote3.Visible = true;
                     imgNote4.Visible = true;
                     imgNote5.Visible = true;
                     imgNote6.Visible = false;
+                    imgNote2.Width = full;
+                    imgNote3.Width = full;
+                    imgNote5.Width = semi;
+                    break;
+                case 5:
+                    imgNote1.ImageLocation = controle.GetImageDirectory() + "/logo/goldStar.png";
+                    imgNote1.Visible = true;
+                    imgNote2.Visible = true;
+                    imgNote3.Visible = true;
+                    imgNote4.Visible = true;
+                    imgNote5.Visible = true;
+                    imgNote6.Visible = false;
+                    imgNote2.Width = full;
+                    imgNote3.Width = full;
+                    imgNote4.Width = full;
+                    imgNote5.Width = full;
                     break;
                 case 6:
-                    imgNote1.Visible = true;
                     imgNote1.ImageLocation = controle.GetImageDirectory() + "/logo/goldStar.png";
+                    imgNote1.Visible = true;
                     imgNote2.Visible = true;
                     imgNote3.Visible = true;
                     imgNote4.Visible = true;
                     imgNote5.Visible = true;
                     imgNote6.Visible = true;
+                    imgNote2.Width = full;
+                    imgNote3.Width = full;
+                    imgNote4.Width = full;
+                    imgNote5.Width = full;
                     break;
             }
         }
@@ -559,7 +693,7 @@ namespace MyList.Vue
 
         private void cboNote_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadImageNote(int.Parse(cboNote.Text));
+            LoadImageNote(double.Parse(cboNote.Text));
         }
 
         private void txtBoxCasting_TextChanged(object sender, EventArgs e)
@@ -626,6 +760,7 @@ namespace MyList.Vue
                     imgIndex++;
                 }
                 File.Copy(cheminImage, Path.Combine(controle.GetImageDirectory(), image + ext));
+                File.Copy(cheminImage, Path.Combine(controle.GetLocalImageDirectory(), image + ext));
             }
             else
             {
@@ -638,6 +773,7 @@ namespace MyList.Vue
                         imgIndex++;
                     }
                     File.Copy(cheminImage, Path.Combine(controle.GetImageDirectory(), image + ext));
+                    File.Copy(cheminImage, Path.Combine(controle.GetLocalImageDirectory(), image + ext));
                 }
                 else
                 {
@@ -648,13 +784,14 @@ namespace MyList.Vue
                         imgIndex++;
                     }
                     File.Copy(cheminImage, Path.Combine(controle.GetImageDirectory(), image + ext));
+                    File.Copy(cheminImage, Path.Combine(controle.GetLocalImageDirectory(), image + ext));
                 }
             }
         }
 
         private void LoadImageFiche()
         {
-            imgFiche.ImageLocation = controle.GetImageDirectory() + lblImage.Text;
+            imgFiche.ImageLocation = controle.GetLocalImageDirectory() + lblImage.Text;
         }
 
         /// <summary>

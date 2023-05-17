@@ -88,18 +88,94 @@ namespace MyList.Connexion
         /// <typeparam name="T"></typeparam>
         /// <param name="nomCollection"></param>
         /// <returns></returns>
-        public List<T> CollectionToList<T>(string nomCollection, string utilisateur)
+        public List<T> CollectionToList<T>(string nomCollection, string utilisateur, string annee, string titre)
         {
-            if (utilisateur != null)
+            DateTime start = new DateTime();
+            DateTime end = new DateTime();
+            if (annee != "All")
             {
-                var filter = new BsonDocument("utilisateur", utilisateur);
-                return GetCollection<T>(nomCollection).Find(filter).ToList();
+                switch (annee)
+                {
+                    case "2022":
+                        start = new DateTime(2022, 01, 01, 00, 00, 00);
+                        end = new DateTime(2022, 12, 31, 23, 59, 59);
+                        break;
+                    case "2023":
+                        start = new DateTime(2023, 01, 01, 00, 00, 00);
+                        end = new DateTime(2023, 12, 31, 23, 59, 59);
+                        break;
+                }
             }
-            else
+            
+            if (titre != "" && titre != null) // Titre non null
             {
-                return GetCollection<T>(nomCollection).AsQueryable().ToList();
+                if (utilisateur != null && utilisateur != "Tous") // Utilisateur non null
+                {                   
+                    if (annee != "All") // Titre + Utilisateur + Année
+                    {
+                        var filterDefinition = Builders<T>.Filter.Eq("utilisateur", utilisateur) &
+                                               Builders<T>.Filter.Gt("dateAjout", start) &
+                                               Builders<T>.Filter.Lt("dateAjout", end) &
+                                               Builders<T>.Filter.Regex("titre", new BsonRegularExpression(titre, "i"));
+                        return GetCollection<T>(nomCollection).Find(filterDefinition).ToList();
+                    }
+                    else // Titre + Utilisateur
+                    {
+                        var filterDefinition = Builders<T>.Filter.Eq("utilisateur", utilisateur) &
+                                               Builders<T>.Filter.Regex("titre", new BsonRegularExpression(titre, "i"));
+                        return GetCollection<T>(nomCollection).Find(filterDefinition).ToList();
+                    }
+                }
+                else // Utilisateur null
+                {
+                    if (annee != "All") // Titre + Année
+                    {
+                        var filterDefinition = Builders<T>.Filter.Gt("dateAjout", start) &
+                                               Builders<T>.Filter.Lt("dateAjout", end) &
+                                               Builders<T>.Filter.Regex("titre", new BsonRegularExpression(titre, "i"));
+                        return GetCollection<T>(nomCollection).Find(filterDefinition).ToList();
+                    }
+                    else // Titre
+                    {
+                        var filterDefinition = Builders<T>.Filter.Regex("titre", new BsonRegularExpression(titre, "i"));
+                        return GetCollection<T>(nomCollection).Find(filterDefinition).ToList();
+                    }
+                }
             }
+            else // Titre null
+            {
+                if (utilisateur != null && utilisateur != "Tous") // Utilisateur non null
+                {
+                    if (annee != "All") // Utilisateur + Année
+                    {
+                        var filterDefinition = Builders<T>.Filter.Eq("utilisateur", utilisateur) &
+                                               Builders<T>.Filter.Gt("dateAjout", start) &
+                                               Builders<T>.Filter.Lt("dateAjout", end);
+                        return GetCollection<T>(nomCollection).Find(filterDefinition).ToList();
+                    }
+                    else // Utilisateur
+                    {
+                        var filterDefinition = Builders<T>.Filter.Eq("utilisateur", utilisateur);
+                        return GetCollection<T>(nomCollection).Find(filterDefinition).ToList();
+                    }
+                }
+                else // Utilisateur null
+                {
+                    if (annee != "All") // Année
+                    {
+                        var filterDefinition = Builders<T>.Filter.Gt("dateAjout", start) &
+                                               Builders<T>.Filter.Lt("dateAjout", end);
+                        return GetCollection<T>(nomCollection).Find(filterDefinition).ToList();
+                    }
+                    else // Tout
+                    {
+                        return GetCollection<T>(nomCollection).AsQueryable().ToList();
+                    }
+                }
+            }           
         }
+      
+
 
         /// <summary>
         /// Récupération d'une collection

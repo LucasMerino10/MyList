@@ -30,7 +30,7 @@ namespace MyList.Modele
         /// <summary>
         /// Note attribué au media par l'utilisateur
         /// </summary>
-        public int note { get; set; }
+        public double note { get; set; }
         /// <summary>
         /// Commentaire perso de l'utilisateur
         /// </summary>
@@ -46,8 +46,10 @@ namespace MyList.Modele
 
         public string genre { get; set; }
 
+        public string imdb { get; set; }
 
-        public Film(string utilisateur, string titre, int duree, int sortie, string casting, int note, string commentaire, string plateforme, string img, DateTime dateAjout, string realisateur, string genre)
+
+        public Film(string utilisateur, string titre, int duree, int sortie, string casting, double note, string commentaire, string plateforme, string img, DateTime dateAjout, string realisateur, string genre, string imdb)
         {
             this.utilisateur = utilisateur;
             this.titre = titre;
@@ -61,6 +63,7 @@ namespace MyList.Modele
             this.dateAjout = dateAjout;
             this.realisateur = realisateur;
             this.genre = genre;
+            this.imdb = imdb;
         }
 
         public int CompareTo(object obj)
@@ -110,12 +113,17 @@ namespace MyList.Modele
             {
                 mois = "0" + this.dateAjout.Month;
             }
-            return "Ajouté le " + jour + "/" + mois + "/" + this.dateAjout.Year;
+            return "Ajouté par " + GetUtilisateur() + " le " + jour + "/" + mois + "/" + this.dateAjout.Year;
+        }
+
+        public string GetDate()
+        {
+            return this.dateAjout.Year.ToString();
         }
 
         public string GetUtilisateur()
         {
-            return "Ajouté par " + this.utilisateur;
+            return this.utilisateur;
         }
 
         public string GetDuree()
@@ -138,6 +146,11 @@ namespace MyList.Modele
         public string GetRealisateur()
         {
             return "Réalisateur : " + this.realisateur;
+        }
+
+        public string GetImdb()
+        {
+            return this.imdb;
         }
     }
 }

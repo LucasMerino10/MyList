@@ -22,7 +22,7 @@ namespace MyList.Modele
         /// <summary>
         /// Note attribué au media par l'utilisateur
         /// </summary>
-        public int note { get; set; }
+        public double note { get; set; }
         /// <summary>
         /// Commentaire perso de l'utilisateur
         /// </summary>
@@ -40,7 +40,7 @@ namespace MyList.Modele
         public string genre { get; set; }
 
 
-        public Jeu(string utilisateur, string titre, int sortie, int note, string commentaire, string plateforme, int tempsJeu, string img, DateTime dateAjout, string developpeur, string genre)
+        public Jeu(string utilisateur, string titre, int sortie, double note, string commentaire, string plateforme, int tempsJeu, string img, DateTime dateAjout, string developpeur, string genre)
         {
             this.utilisateur = utilisateur;
             this.titre = titre;
@@ -90,12 +90,12 @@ namespace MyList.Modele
             {
                 mois = "0" + this.dateAjout.Month;
             }
-            return "Ajouté le " + jour + "/" + mois + "/" + this.dateAjout.Year;
+            return "Ajouté par " + GetUtilisateur() + " le " + jour + "/" + mois + "/" + this.dateAjout.Year;
         }
 
         public string GetUtilisateur()
         {
-            return "Ajouté par " + this.utilisateur;
+            return this.utilisateur;
         }
 
         public string GetTempsJeu()

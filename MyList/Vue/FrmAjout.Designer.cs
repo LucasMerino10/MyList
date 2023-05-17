@@ -31,6 +31,8 @@ namespace MyList.Vue
         {
             this.btnValider = new System.Windows.Forms.Button();
             this.grpType = new System.Windows.Forms.GroupBox();
+            this.txtImdb = new System.Windows.Forms.TextBox();
+            this.lblImdb = new System.Windows.Forms.Label();
             this.txtGenre = new System.Windows.Forms.TextBox();
             this.txtRealisateur = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -91,7 +93,7 @@ namespace MyList.Vue
             // btnValider
             // 
             this.btnValider.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnValider.Location = new System.Drawing.Point(16, 670);
+            this.btnValider.Location = new System.Drawing.Point(16, 742);
             this.btnValider.Name = "btnValider";
             this.btnValider.Size = new System.Drawing.Size(75, 37);
             this.btnValider.TabIndex = 14;
@@ -103,6 +105,8 @@ namespace MyList.Vue
             // 
             this.grpType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.grpType.Controls.Add(this.txtImdb);
+            this.grpType.Controls.Add(this.lblImdb);
             this.grpType.Controls.Add(this.txtGenre);
             this.grpType.Controls.Add(this.txtRealisateur);
             this.grpType.Controls.Add(this.label8);
@@ -131,10 +135,26 @@ namespace MyList.Vue
             this.grpType.Controls.Add(this.radioFilm);
             this.grpType.Location = new System.Drawing.Point(16, 28);
             this.grpType.Name = "grpType";
-            this.grpType.Size = new System.Drawing.Size(458, 713);
+            this.grpType.Size = new System.Drawing.Size(458, 785);
             this.grpType.TabIndex = 1;
             this.grpType.TabStop = false;
             this.grpType.Text = "Informations";
+            // 
+            // txtImdb
+            // 
+            this.txtImdb.Location = new System.Drawing.Point(159, 580);
+            this.txtImdb.Name = "txtImdb";
+            this.txtImdb.Size = new System.Drawing.Size(280, 26);
+            this.txtImdb.TabIndex = 24;
+            // 
+            // lblImdb
+            // 
+            this.lblImdb.AutoSize = true;
+            this.lblImdb.Location = new System.Drawing.Point(15, 586);
+            this.lblImdb.Name = "lblImdb";
+            this.lblImdb.Size = new System.Drawing.Size(92, 20);
+            this.lblImdb.TabIndex = 23;
+            this.lblImdb.Text = "Lien IMDB :";
             // 
             // txtGenre
             // 
@@ -174,6 +194,7 @@ namespace MyList.Vue
             // 
             // cboUtilisateur
             // 
+            this.cboUtilisateur.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboUtilisateur.FormattingEnabled = true;
             this.cboUtilisateur.Items.AddRange(new object[] {
             "Clem",
@@ -235,6 +256,7 @@ namespace MyList.Vue
             // 
             // cboPlateforme
             // 
+            this.cboPlateforme.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboPlateforme.FormattingEnabled = true;
             this.cboPlateforme.Location = new System.Drawing.Point(159, 383);
             this.cboPlateforme.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -245,13 +267,18 @@ namespace MyList.Vue
             // 
             // cboNote
             // 
+            this.cboNote.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboNote.FormattingEnabled = true;
             this.cboNote.Items.AddRange(new object[] {
             "0",
             "1",
+            "1,5",
             "2",
+            "2,5",
             "3",
+            "3,5",
             "4",
+            "4,5",
             "5",
             "6"});
             this.cboNote.Location = new System.Drawing.Point(159, 480);
@@ -266,13 +293,13 @@ namespace MyList.Vue
             this.txtBoxCommentaire.AcceptsReturn = true;
             this.txtBoxCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtBoxCommentaire.Location = new System.Drawing.Point(159, 586);
+            this.txtBoxCommentaire.Location = new System.Drawing.Point(159, 636);
             this.txtBoxCommentaire.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBoxCommentaire.MaxLength = 540;
             this.txtBoxCommentaire.Multiline = true;
             this.txtBoxCommentaire.Name = "txtBoxCommentaire";
             this.txtBoxCommentaire.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtBoxCommentaire.Size = new System.Drawing.Size(280, 76);
+            this.txtBoxCommentaire.Size = new System.Drawing.Size(280, 95);
             this.txtBoxCommentaire.TabIndex = 13;
             this.txtBoxCommentaire.TextChanged += new System.EventHandler(this.txtBoxCommentaire_TextChanged);
             // 
@@ -341,7 +368,7 @@ namespace MyList.Vue
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 586);
+            this.label5.Location = new System.Drawing.Point(15, 636);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(116, 20);
@@ -427,7 +454,7 @@ namespace MyList.Vue
             this.grpFiche.Controls.Add(this.imgFiche);
             this.grpFiche.Location = new System.Drawing.Point(490, 28);
             this.grpFiche.Name = "grpFiche";
-            this.grpFiche.Size = new System.Drawing.Size(1184, 713);
+            this.grpFiche.Size = new System.Drawing.Size(1184, 785);
             this.grpFiche.TabIndex = 2;
             this.grpFiche.TabStop = false;
             this.grpFiche.Text = "Prévisualisation";
@@ -618,7 +645,7 @@ namespace MyList.Vue
             | System.Windows.Forms.AnchorStyles.Left)));
             this.imgFiche.Location = new System.Drawing.Point(20, 26);
             this.imgFiche.Name = "imgFiche";
-            this.imgFiche.Size = new System.Drawing.Size(538, 663);
+            this.imgFiche.Size = new System.Drawing.Size(538, 735);
             this.imgFiche.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.imgFiche.TabIndex = 26;
             this.imgFiche.TabStop = false;
@@ -627,11 +654,12 @@ namespace MyList.Vue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1696, 765);
+            this.ClientSize = new System.Drawing.Size(1696, 837);
             this.Controls.Add(this.grpFiche);
             this.Controls.Add(this.grpType);
             this.Name = "FrmAjout";
             this.Text = "AJOUTER/MODIFIER UNE FICHE";
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Load += new System.EventHandler(this.FrmAjout_Load);
             this.grpType.ResumeLayout(false);
             this.grpType.PerformLayout();
@@ -698,5 +726,7 @@ namespace MyList.Vue
         private System.Windows.Forms.Label lblRealisateurInfo;
         private System.Windows.Forms.Label lblRealisateurFiche;
         private System.Windows.Forms.Label lblGenre;
+        private System.Windows.Forms.TextBox txtImdb;
+        private System.Windows.Forms.Label lblImdb;
     }
 }

@@ -26,7 +26,7 @@ namespace MyList.Modele
         /// <summary>
         /// Note attribué au media par l'utilisateur
         /// </summary>
-        public int note { get; set; }
+        public double note { get; set; }
         /// <summary>
         /// Commentaire perso de l'utilisateur
         /// </summary>
@@ -42,8 +42,10 @@ namespace MyList.Modele
 
         public string genre { get; set; }
 
+        public string imdb { get; set; }
 
-        public Serie(string utilisateur, string titre, int sortie, int saison, int note, string commentaire, string plateforme, DateTime dateAjout, string img, string casting, string genre)
+
+        public Serie(string utilisateur, string titre, int sortie, int saison, double note, string commentaire, string plateforme, DateTime dateAjout, string img, string casting, string genre, string imdb)
         {
             this.utilisateur = utilisateur;
             this.titre = titre;
@@ -56,6 +58,7 @@ namespace MyList.Modele
             this.dateAjout = dateAjout;
             this.casting = casting;
             this.genre = genre;
+            this.imdb = imdb;
         }
 
         public int CompareTo(object obj)
@@ -98,12 +101,12 @@ namespace MyList.Modele
             {
                 mois = "0" + this.dateAjout.Month;
             }
-            return "Ajouté le " + jour + "/" + mois + "/" + this.dateAjout.Year;
+            return "Ajouté par " + GetUtilisateur() + " le " + jour + "/" + mois + "/" + this.dateAjout.Year;
         }
 
         public string GetUtilisateur()
         {
-            return "Ajouté par " + this.utilisateur;
+            return this.utilisateur;
         }
 
         public string GetCasting()

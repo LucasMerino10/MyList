@@ -32,50 +32,49 @@ namespace MyList.Vue
             this.grpFiche = new System.Windows.Forms.GroupBox();
             this.lblGenre = new System.Windows.Forms.Label();
             this.lblDeveloppeur = new System.Windows.Forms.Label();
+            this.lblCommentaire = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTitre = new System.Windows.Forms.Label();
+            this.lblPlateforme = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.lblTemps = new System.Windows.Forms.Label();
+            this.lblSortie = new System.Windows.Forms.Label();
+            this.lblNote = new System.Windows.Forms.Label();
+            this.grpUtilisateur = new System.Windows.Forms.GroupBox();
+            this.radioLucas = new System.Windows.Forms.RadioButton();
+            this.radioClemence = new System.Windows.Forms.RadioButton();
+            this.radioTous = new System.Windows.Forms.RadioButton();
+            this.dgvJeux = new System.Windows.Forms.DataGridView();
+            this.lblResultat = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbAnnee = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtRecherche = new System.Windows.Forms.TextBox();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnSequel = new System.Windows.Forms.Button();
             this.imgNote6 = new System.Windows.Forms.PictureBox();
             this.imgNote2 = new System.Windows.Forms.PictureBox();
             this.imgNote5 = new System.Windows.Forms.PictureBox();
             this.imgNote4 = new System.Windows.Forms.PictureBox();
             this.imgNote3 = new System.Windows.Forms.PictureBox();
             this.imgNote1 = new System.Windows.Forms.PictureBox();
-            this.lblCommentaire = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblTitre = new System.Windows.Forms.Label();
             this.imgPlateforme = new System.Windows.Forms.PictureBox();
-            this.lblPlateforme = new System.Windows.Forms.Label();
-            this.lblUtilisateur = new System.Windows.Forms.Label();
-            this.lblDate = new System.Windows.Forms.Label();
-            this.lblTemps = new System.Windows.Forms.Label();
-            this.lblSortie = new System.Windows.Forms.Label();
-            this.lblNote = new System.Windows.Forms.Label();
             this.imgJeu = new System.Windows.Forms.PictureBox();
             this.btnSupprimer = new System.Windows.Forms.Button();
             this.btnModifier = new System.Windows.Forms.Button();
             this.btnAjout = new System.Windows.Forms.Button();
-            this.grpUtilisateur = new System.Windows.Forms.GroupBox();
-            this.radioLucas = new System.Windows.Forms.RadioButton();
-            this.radioClemence = new System.Windows.Forms.RadioButton();
-            this.radioTous = new System.Windows.Forms.RadioButton();
-            this.dgvJeux = new System.Windows.Forms.DataGridView();
-            this.grpTri = new System.Windows.Forms.GroupBox();
-            this.radioTime = new System.Windows.Forms.RadioButton();
-            this.radioNote = new System.Windows.Forms.RadioButton();
-            this.radioDateAsc = new System.Windows.Forms.RadioButton();
-            this.radioDateDesc = new System.Windows.Forms.RadioButton();
-            this.lblResultat = new System.Windows.Forms.Label();
             this.grpFiche.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.grpUtilisateur.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvJeux)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgNote6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgNote2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgNote5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgNote4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgNote3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgNote1)).BeginInit();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgPlateforme)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgJeu)).BeginInit();
-            this.grpUtilisateur.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvJeux)).BeginInit();
-            this.grpTri.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpFiche
@@ -94,18 +93,16 @@ namespace MyList.Vue
             this.grpFiche.Controls.Add(this.panel1);
             this.grpFiche.Controls.Add(this.imgPlateforme);
             this.grpFiche.Controls.Add(this.lblPlateforme);
-            this.grpFiche.Controls.Add(this.lblUtilisateur);
             this.grpFiche.Controls.Add(this.lblDate);
             this.grpFiche.Controls.Add(this.lblTemps);
             this.grpFiche.Controls.Add(this.lblSortie);
             this.grpFiche.Controls.Add(this.lblNote);
             this.grpFiche.Controls.Add(this.imgJeu);
-            this.grpFiche.Location = new System.Drawing.Point(490, 28);
+            this.grpFiche.Location = new System.Drawing.Point(692, 28);
             this.grpFiche.Name = "grpFiche";
-            this.grpFiche.Size = new System.Drawing.Size(1184, 679);
+            this.grpFiche.Size = new System.Drawing.Size(1184, 692);
             this.grpFiche.TabIndex = 23;
             this.grpFiche.TabStop = false;
-            this.grpFiche.Text = "Fiche";
             // 
             // lblGenre
             // 
@@ -128,66 +125,6 @@ namespace MyList.Vue
             this.lblDeveloppeur.Size = new System.Drawing.Size(122, 21);
             this.lblDeveloppeur.TabIndex = 24;
             this.lblDeveloppeur.Text = "Développeur :";
-            // 
-            // imgNote6
-            // 
-            this.imgNote6.Image = global::MyList.Properties.Resources._002_favorite_1;
-            this.imgNote6.Location = new System.Drawing.Point(833, 448);
-            this.imgNote6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.imgNote6.Name = "imgNote6";
-            this.imgNote6.Size = new System.Drawing.Size(36, 37);
-            this.imgNote6.TabIndex = 23;
-            this.imgNote6.TabStop = false;
-            // 
-            // imgNote2
-            // 
-            this.imgNote2.Image = global::MyList.Properties.Resources._001_favorite;
-            this.imgNote2.Location = new System.Drawing.Point(689, 448);
-            this.imgNote2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.imgNote2.Name = "imgNote2";
-            this.imgNote2.Size = new System.Drawing.Size(36, 37);
-            this.imgNote2.TabIndex = 22;
-            this.imgNote2.TabStop = false;
-            // 
-            // imgNote5
-            // 
-            this.imgNote5.Image = global::MyList.Properties.Resources._001_favorite;
-            this.imgNote5.Location = new System.Drawing.Point(797, 448);
-            this.imgNote5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.imgNote5.Name = "imgNote5";
-            this.imgNote5.Size = new System.Drawing.Size(36, 37);
-            this.imgNote5.TabIndex = 21;
-            this.imgNote5.TabStop = false;
-            // 
-            // imgNote4
-            // 
-            this.imgNote4.Image = global::MyList.Properties.Resources._001_favorite;
-            this.imgNote4.Location = new System.Drawing.Point(761, 448);
-            this.imgNote4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.imgNote4.Name = "imgNote4";
-            this.imgNote4.Size = new System.Drawing.Size(36, 37);
-            this.imgNote4.TabIndex = 20;
-            this.imgNote4.TabStop = false;
-            // 
-            // imgNote3
-            // 
-            this.imgNote3.Image = global::MyList.Properties.Resources._001_favorite;
-            this.imgNote3.Location = new System.Drawing.Point(725, 448);
-            this.imgNote3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.imgNote3.Name = "imgNote3";
-            this.imgNote3.Size = new System.Drawing.Size(36, 37);
-            this.imgNote3.TabIndex = 19;
-            this.imgNote3.TabStop = false;
-            // 
-            // imgNote1
-            // 
-            this.imgNote1.Image = global::MyList.Properties.Resources._001_favorite;
-            this.imgNote1.Location = new System.Drawing.Point(653, 448);
-            this.imgNote1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.imgNote1.Name = "imgNote1";
-            this.imgNote1.Size = new System.Drawing.Size(36, 37);
-            this.imgNote1.TabIndex = 18;
-            this.imgNote1.TabStop = false;
             // 
             // lblCommentaire
             // 
@@ -220,15 +157,6 @@ namespace MyList.Vue
             this.lblTitre.Text = "Titre";
             this.lblTitre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // imgPlateforme
-            // 
-            this.imgPlateforme.Location = new System.Drawing.Point(1056, 124);
-            this.imgPlateforme.Name = "imgPlateforme";
-            this.imgPlateforme.Size = new System.Drawing.Size(64, 65);
-            this.imgPlateforme.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.imgPlateforme.TabIndex = 10;
-            this.imgPlateforme.TabStop = false;
-            // 
             // lblPlateforme
             // 
             this.lblPlateforme.AutoSize = true;
@@ -239,23 +167,12 @@ namespace MyList.Vue
             this.lblPlateforme.TabIndex = 9;
             this.lblPlateforme.Text = "Plateforme :";
             // 
-            // lblUtilisateur
-            // 
-            this.lblUtilisateur.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.lblUtilisateur.AutoSize = true;
-            this.lblUtilisateur.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUtilisateur.Location = new System.Drawing.Point(946, 633);
-            this.lblUtilisateur.Name = "lblUtilisateur";
-            this.lblUtilisateur.Size = new System.Drawing.Size(91, 21);
-            this.lblUtilisateur.TabIndex = 7;
-            this.lblUtilisateur.Text = "Ajouté par";
-            // 
             // lblDate
             // 
             this.lblDate.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(588, 633);
+            this.lblDate.Location = new System.Drawing.Point(588, 646);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(79, 21);
             this.lblDate.TabIndex = 6;
@@ -290,53 +207,6 @@ namespace MyList.Vue
             this.lblNote.Size = new System.Drawing.Size(58, 21);
             this.lblNote.TabIndex = 2;
             this.lblNote.Text = "Note :";
-            // 
-            // imgJeu
-            // 
-            this.imgJeu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.imgJeu.Location = new System.Drawing.Point(15, 25);
-            this.imgJeu.Name = "imgJeu";
-            this.imgJeu.Size = new System.Drawing.Size(538, 629);
-            this.imgJeu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.imgJeu.TabIndex = 0;
-            this.imgJeu.TabStop = false;
-            // 
-            // btnSupprimer
-            // 
-            this.btnSupprimer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSupprimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSupprimer.Location = new System.Drawing.Point(357, 665);
-            this.btnSupprimer.Name = "btnSupprimer";
-            this.btnSupprimer.Size = new System.Drawing.Size(114, 38);
-            this.btnSupprimer.TabIndex = 22;
-            this.btnSupprimer.Text = "Supprimer";
-            this.btnSupprimer.UseVisualStyleBackColor = true;
-            this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
-            // 
-            // btnModifier
-            // 
-            this.btnModifier.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnModifier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModifier.Location = new System.Drawing.Point(190, 665);
-            this.btnModifier.Name = "btnModifier";
-            this.btnModifier.Size = new System.Drawing.Size(114, 38);
-            this.btnModifier.TabIndex = 21;
-            this.btnModifier.Text = "Modifier";
-            this.btnModifier.UseVisualStyleBackColor = true;
-            this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
-            // 
-            // btnAjout
-            // 
-            this.btnAjout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAjout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAjout.Location = new System.Drawing.Point(22, 666);
-            this.btnAjout.Name = "btnAjout";
-            this.btnAjout.Size = new System.Drawing.Size(114, 38);
-            this.btnAjout.TabIndex = 20;
-            this.btnAjout.Text = "Ajouter";
-            this.btnAjout.UseVisualStyleBackColor = true;
-            this.btnAjout.Click += new System.EventHandler(this.btnAjout_Click);
             // 
             // grpUtilisateur
             // 
@@ -400,87 +270,229 @@ namespace MyList.Vue
             this.dgvJeux.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvJeux.RowTemplate.Height = 28;
             this.dgvJeux.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvJeux.Size = new System.Drawing.Size(448, 435);
+            this.dgvJeux.Size = new System.Drawing.Size(650, 448);
             this.dgvJeux.TabIndex = 18;
+            this.dgvJeux.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvJeux_CellFormatting);
+            this.dgvJeux.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvJeux_ColumnHeaderMouseClick);
             this.dgvJeux.SelectionChanged += new System.EventHandler(this.dgvJeux_SelectionChanged);
-            // 
-            // grpTri
-            // 
-            this.grpTri.Controls.Add(this.radioTime);
-            this.grpTri.Controls.Add(this.radioNote);
-            this.grpTri.Controls.Add(this.radioDateAsc);
-            this.grpTri.Controls.Add(this.radioDateDesc);
-            this.grpTri.Location = new System.Drawing.Point(263, 28);
-            this.grpTri.Name = "grpTri";
-            this.grpTri.Size = new System.Drawing.Size(208, 125);
-            this.grpTri.TabIndex = 24;
-            this.grpTri.TabStop = false;
-            this.grpTri.Text = "Trier par";
-            // 
-            // radioTime
-            // 
-            this.radioTime.AutoSize = true;
-            this.radioTime.Location = new System.Drawing.Point(107, 24);
-            this.radioTime.Name = "radioTime";
-            this.radioTime.Size = new System.Drawing.Size(82, 24);
-            this.radioTime.TabIndex = 3;
-            this.radioTime.TabStop = true;
-            this.radioTime.Text = "Temps";
-            this.radioTime.UseVisualStyleBackColor = true;
-            this.radioTime.CheckedChanged += new System.EventHandler(this.radioTime_CheckedChanged);
-            // 
-            // radioNote
-            // 
-            this.radioNote.AutoSize = true;
-            this.radioNote.Location = new System.Drawing.Point(6, 84);
-            this.radioNote.Name = "radioNote";
-            this.radioNote.Size = new System.Drawing.Size(68, 24);
-            this.radioNote.TabIndex = 2;
-            this.radioNote.Text = "Note";
-            this.radioNote.UseVisualStyleBackColor = true;
-            this.radioNote.CheckedChanged += new System.EventHandler(this.radioNote_CheckedChanged);
-            // 
-            // radioDateAsc
-            // 
-            this.radioDateAsc.AutoSize = true;
-            this.radioDateAsc.Location = new System.Drawing.Point(6, 54);
-            this.radioDateAsc.Name = "radioDateAsc";
-            this.radioDateAsc.Size = new System.Drawing.Size(81, 24);
-            this.radioDateAsc.TabIndex = 1;
-            this.radioDateAsc.Text = "Date ↑";
-            this.radioDateAsc.UseVisualStyleBackColor = true;
-            this.radioDateAsc.CheckedChanged += new System.EventHandler(this.radioDateAsc_CheckedChanged);
-            // 
-            // radioDateDesc
-            // 
-            this.radioDateDesc.AutoSize = true;
-            this.radioDateDesc.Checked = true;
-            this.radioDateDesc.Location = new System.Drawing.Point(6, 24);
-            this.radioDateDesc.Name = "radioDateDesc";
-            this.radioDateDesc.Size = new System.Drawing.Size(81, 24);
-            this.radioDateDesc.TabIndex = 0;
-            this.radioDateDesc.TabStop = true;
-            this.radioDateDesc.Text = "Date ↓";
-            this.radioDateDesc.UseVisualStyleBackColor = true;
-            this.radioDateDesc.CheckedChanged += new System.EventHandler(this.radioDateDesc_CheckedChanged);
             // 
             // lblResultat
             // 
+            this.lblResultat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblResultat.AutoSize = true;
             this.lblResultat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResultat.Location = new System.Drawing.Point(18, 171);
+            this.lblResultat.Location = new System.Drawing.Point(454, 668);
             this.lblResultat.Name = "lblResultat";
             this.lblResultat.Size = new System.Drawing.Size(220, 22);
             this.lblResultat.TabIndex = 25;
             this.lblResultat.Text = "Nombre d\'enregistrements";
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(469, 171);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 22);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Année : ";
+            // 
+            // cmbAnnee
+            // 
+            this.cmbAnnee.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbAnnee.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbAnnee.FormattingEnabled = true;
+            this.cmbAnnee.Items.AddRange(new object[] {
+            "2022",
+            "2023",
+            "All"});
+            this.cmbAnnee.Location = new System.Drawing.Point(552, 170);
+            this.cmbAnnee.Name = "cmbAnnee";
+            this.cmbAnnee.Size = new System.Drawing.Size(120, 28);
+            this.cmbAnnee.TabIndex = 29;
+            this.cmbAnnee.SelectedIndexChanged += new System.EventHandler(this.cmbAnnee_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(18, 171);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 22);
+            this.label2.TabIndex = 33;
+            this.label2.Text = "Titre : ";
+            // 
+            // txtRecherche
+            // 
+            this.txtRecherche.Location = new System.Drawing.Point(92, 170);
+            this.txtRecherche.Name = "txtRecherche";
+            this.txtRecherche.Size = new System.Drawing.Size(262, 26);
+            this.txtRecherche.TabIndex = 34;
+            this.txtRecherche.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRecherche_KeyPress);
+            // 
+            // btnReset
+            // 
+            this.btnReset.FlatAppearance.BorderSize = 0;
+            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReset.Image = global::MyList.Properties.Resources._return;
+            this.btnReset.Location = new System.Drawing.Point(360, 161);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(44, 44);
+            this.btnReset.TabIndex = 35;
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // btnSequel
+            // 
+            this.btnSequel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSequel.FlatAppearance.BorderSize = 0;
+            this.btnSequel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSequel.Image = global::MyList.Properties.Resources.copy;
+            this.btnSequel.Location = new System.Drawing.Point(262, 668);
+            this.btnSequel.Name = "btnSequel";
+            this.btnSequel.Size = new System.Drawing.Size(64, 64);
+            this.btnSequel.TabIndex = 32;
+            this.btnSequel.UseVisualStyleBackColor = true;
+            this.btnSequel.Click += new System.EventHandler(this.btnSequel_Click);
+            // 
+            // imgNote6
+            // 
+            this.imgNote6.Image = global::MyList.Properties.Resources._002_favorite_1;
+            this.imgNote6.Location = new System.Drawing.Point(833, 448);
+            this.imgNote6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.imgNote6.Name = "imgNote6";
+            this.imgNote6.Size = new System.Drawing.Size(36, 37);
+            this.imgNote6.TabIndex = 23;
+            this.imgNote6.TabStop = false;
+            // 
+            // imgNote2
+            // 
+            this.imgNote2.Image = global::MyList.Properties.Resources._001_favorite;
+            this.imgNote2.Location = new System.Drawing.Point(689, 448);
+            this.imgNote2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.imgNote2.Name = "imgNote2";
+            this.imgNote2.Size = new System.Drawing.Size(36, 37);
+            this.imgNote2.TabIndex = 22;
+            this.imgNote2.TabStop = false;
+            // 
+            // imgNote5
+            // 
+            this.imgNote5.Image = global::MyList.Properties.Resources._001_favorite;
+            this.imgNote5.Location = new System.Drawing.Point(797, 448);
+            this.imgNote5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.imgNote5.Name = "imgNote5";
+            this.imgNote5.Size = new System.Drawing.Size(36, 37);
+            this.imgNote5.TabIndex = 21;
+            this.imgNote5.TabStop = false;
+            // 
+            // imgNote4
+            // 
+            this.imgNote4.Image = global::MyList.Properties.Resources._001_favorite;
+            this.imgNote4.Location = new System.Drawing.Point(761, 448);
+            this.imgNote4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.imgNote4.Name = "imgNote4";
+            this.imgNote4.Size = new System.Drawing.Size(36, 37);
+            this.imgNote4.TabIndex = 20;
+            this.imgNote4.TabStop = false;
+            // 
+            // imgNote3
+            // 
+            this.imgNote3.Image = global::MyList.Properties.Resources._001_favorite;
+            this.imgNote3.Location = new System.Drawing.Point(725, 448);
+            this.imgNote3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.imgNote3.Name = "imgNote3";
+            this.imgNote3.Size = new System.Drawing.Size(36, 37);
+            this.imgNote3.TabIndex = 19;
+            this.imgNote3.TabStop = false;
+            // 
+            // imgNote1
+            // 
+            this.imgNote1.Image = global::MyList.Properties.Resources._001_favorite;
+            this.imgNote1.Location = new System.Drawing.Point(653, 448);
+            this.imgNote1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.imgNote1.Name = "imgNote1";
+            this.imgNote1.Size = new System.Drawing.Size(36, 37);
+            this.imgNote1.TabIndex = 18;
+            this.imgNote1.TabStop = false;
+            // 
+            // imgPlateforme
+            // 
+            this.imgPlateforme.Cursor = System.Windows.Forms.Cursors.Default;
+            this.imgPlateforme.Location = new System.Drawing.Point(1056, 124);
+            this.imgPlateforme.Name = "imgPlateforme";
+            this.imgPlateforme.Size = new System.Drawing.Size(64, 65);
+            this.imgPlateforme.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgPlateforme.TabIndex = 10;
+            this.imgPlateforme.TabStop = false;
+            // 
+            // imgJeu
+            // 
+            this.imgJeu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.imgJeu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgJeu.Location = new System.Drawing.Point(15, 25);
+            this.imgJeu.Name = "imgJeu";
+            this.imgJeu.Size = new System.Drawing.Size(538, 642);
+            this.imgJeu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgJeu.TabIndex = 0;
+            this.imgJeu.TabStop = false;
+            this.imgJeu.Click += new System.EventHandler(this.imgJeu_Click);
+            // 
+            // btnSupprimer
+            // 
+            this.btnSupprimer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSupprimer.FlatAppearance.BorderSize = 0;
+            this.btnSupprimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSupprimer.Image = global::MyList.Properties.Resources.delete;
+            this.btnSupprimer.Location = new System.Drawing.Point(182, 668);
+            this.btnSupprimer.Name = "btnSupprimer";
+            this.btnSupprimer.Size = new System.Drawing.Size(64, 64);
+            this.btnSupprimer.TabIndex = 22;
+            this.btnSupprimer.UseVisualStyleBackColor = true;
+            this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
+            this.btnSupprimer.MouseHover += new System.EventHandler(this.btnSupprimer_MouseHover);
+            // 
+            // btnModifier
+            // 
+            this.btnModifier.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnModifier.FlatAppearance.BorderSize = 0;
+            this.btnModifier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModifier.Image = global::MyList.Properties.Resources.edit;
+            this.btnModifier.Location = new System.Drawing.Point(102, 668);
+            this.btnModifier.Name = "btnModifier";
+            this.btnModifier.Size = new System.Drawing.Size(64, 64);
+            this.btnModifier.TabIndex = 21;
+            this.btnModifier.UseVisualStyleBackColor = true;
+            this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
+            this.btnModifier.MouseHover += new System.EventHandler(this.btnModifier_MouseHover);
+            // 
+            // btnAjout
+            // 
+            this.btnAjout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAjout.FlatAppearance.BorderSize = 0;
+            this.btnAjout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAjout.Image = global::MyList.Properties.Resources.plus;
+            this.btnAjout.Location = new System.Drawing.Point(22, 668);
+            this.btnAjout.Name = "btnAjout";
+            this.btnAjout.Size = new System.Drawing.Size(64, 64);
+            this.btnAjout.TabIndex = 20;
+            this.btnAjout.UseVisualStyleBackColor = true;
+            this.btnAjout.Click += new System.EventHandler(this.btnAjout_Click);
+            this.btnAjout.MouseHover += new System.EventHandler(this.btnAjout_MouseHover);
+            // 
             // FrmJeux
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1696, 731);
+            this.ClientSize = new System.Drawing.Size(1898, 744);
+            this.Controls.Add(this.btnReset);
+            this.Controls.Add(this.txtRecherche);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnSequel);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cmbAnnee);
             this.Controls.Add(this.lblResultat);
-            this.Controls.Add(this.grpTri);
             this.Controls.Add(this.grpFiche);
             this.Controls.Add(this.btnSupprimer);
             this.Controls.Add(this.btnModifier);
@@ -489,23 +501,22 @@ namespace MyList.Vue
             this.Controls.Add(this.dgvJeux);
             this.Name = "FrmJeux";
             this.Text = "JEUX VIDEO";
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Load += new System.EventHandler(this.FrmJeux_Load);
             this.grpFiche.ResumeLayout(false);
             this.grpFiche.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.grpUtilisateur.ResumeLayout(false);
+            this.grpUtilisateur.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvJeux)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgNote6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgNote2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgNote5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgNote4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgNote3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgNote1)).EndInit();
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgPlateforme)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgJeu)).EndInit();
-            this.grpUtilisateur.ResumeLayout(false);
-            this.grpUtilisateur.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvJeux)).EndInit();
-            this.grpTri.ResumeLayout(false);
-            this.grpTri.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -518,7 +529,6 @@ namespace MyList.Vue
         private System.Windows.Forms.Label lblTitre;
         private System.Windows.Forms.PictureBox imgPlateforme;
         private System.Windows.Forms.Label lblPlateforme;
-        private System.Windows.Forms.Label lblUtilisateur;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lblTemps;
         private System.Windows.Forms.Label lblSortie;
@@ -539,13 +549,14 @@ namespace MyList.Vue
         private System.Windows.Forms.PictureBox imgNote4;
         private System.Windows.Forms.PictureBox imgNote3;
         private System.Windows.Forms.PictureBox imgNote1;
-        private System.Windows.Forms.GroupBox grpTri;
-        private System.Windows.Forms.RadioButton radioTime;
-        private System.Windows.Forms.RadioButton radioNote;
-        private System.Windows.Forms.RadioButton radioDateAsc;
-        private System.Windows.Forms.RadioButton radioDateDesc;
         private System.Windows.Forms.Label lblGenre;
         private System.Windows.Forms.Label lblDeveloppeur;
         private System.Windows.Forms.Label lblResultat;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbAnnee;
+        private System.Windows.Forms.Button btnSequel;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtRecherche;
+        private System.Windows.Forms.Button btnReset;
     }
 }
